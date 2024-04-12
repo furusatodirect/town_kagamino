@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/style.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-kagamino.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <style type="text/css">
+    .wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100vh;
+      font-size: 1.5rem;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+      padding: 0;
+      margin-top: 5rem;
+    }
+
+    .ecv-header .ec-pageHeader {
+      padding: 1rem 0.5rem 1rem;
+      background-color: #fafffc;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .ecv-header .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+      border: none;
+      margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    /*ec-progress__item-n*/
+    .ec-cartTable {
+      display: flex;
+      margin: 2rem auto;
+      padding: 0;
+      width: 100%;
+      border-top: none;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .ec-cartRole__progress {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .ec-progress-n {
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 600px
+    }
+
+    .ec-progress-n .ec-progress__item {
+      position: relative;
+      flex: 1;
+    }
+
+    .ec-progress-n .ec-progress__item .ec-progress__number {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .ec-progress-n .ec-progress__item.is-active .progress_circle {
+      background: #0dab65;
+    }
+
+    .ec-progress-n .ec-progress__item .progress_circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 3.3rem;
+      height: 3.3rem;
+      margin-bottom: .5rem;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .ec-progress-n .ec-progress__item.is-active .progress_circle:before {
+      content: "";
+      background: #fff;
+    }
+
+    .ec-progress-n .ec-progress__item .progress_circle:before {
+      display: block;
+      content: "";
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .ec-progress-n .ec-progress__item .progress_circle:before {
+      background: #c4c4c4;
+    }
+
+    .ec-progress-n .ec-progress__item.is-active .ec-progress__label {
+      font-size: 1.2rem;
+      color: #0dab65;
+      font-weight: bold;
+    }
+
+    .ec-progress-n .ec-progress__item .ec-progress__label {
+      font-size: 1.2rem;
+      color: #c4c4c4;
+    }
+
+
+    .ec-progress-n .ec-progress__item:after {
+      background: #c4c4c4;
+      left: 50%;
+    }
+
+    .ec-progress-n .ec-progress__item:after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      top: 15px;
+      left: 50%;
+    }
+
+    .ec-progress-n .ec-progress__item:last-child::after {
+      content: none;
+    }
+
+    /*END ec-progress__item-n*/
+
+    /* ec-blockBtn*/
+    .ec-blockBtn--action,
+    .ec-cartRole__action,
+    .ec-blockBtn--cancel {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    .ec-blockBtn--action,
+    .ec-cartRole__action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #0dab65;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #fff;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      transition: ease .2s;
+    }
+
+    .ec-blockBtn--action::after,
+    .ec-cartRole__action::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-blockBtn--action:hover,
+    .ec-cartRole__action:hover {
+      color: #0dab65;
+      background: #fff;
+      border: 2px solid #0dab65;
+    }
+
+    .ec-blockBtn--action:hover::after,
+    .ec-cartRole__action:hover::after {
+      color: #0dab65;
+    }
+
+    .ec-blockBtn--cancel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background-color: #fff;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #525263;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #c4c4c4;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+    }
+
+    .ec-blockBtn--cancel::after {
+      content: "\e64a";
+      font-family: 'themify';
+      position: absolute;
+      left: 1.5rem;
+      color: #c4c4c4;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-blockBtn--cancel:hover {
+      color: #fff;
+      background: #c4c4c4;
+      border: 2px solid #c4c4c4;
+    }
+
+    .ec-blockBtn--cancel:hover::after {
+      color: #fff;
+    }
+
+    .ec-cartTable .ec-blockBtn--action {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-cartTable .ec-blockBtn--action {
+        display: block;
+      }
+    }
+
+    /*END ec-blockBtn*/
+
+
+    /*.ec-orderForm*/
+    .ec-orderForm {
+      margin: 0 auto;
+      max-width: calc(1130px +(1rem* 2));
+      width: 100%;
+    }
+
+    .ec-rectHeading {
+      margin-bottom: 2rem;
+    }
+
+    .ec-rectHeading h2 {
+      background: #0dab65;
+      color: #fff;
+      border-radius: .5rem;
+    }
+
+    .ec-rectHeading p {
+      font-weight: bold;
+      text-align: center;
+      padding: 1.5rem 0;
+      width: 360px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2.5rem;
+      margin: 0 auto;
+      padding: 2rem;
+      font-size: calc(14px + 2 * ((100vw - 320px) / 670));
+      color: #0dab65;
+      font-weight: bold;
+      touch-action: manipulation;
+      border: 2px solid #0dab65;
+      height: 0;
+      line-height: 0;
+    }
+
+    .info-wrap {
+      margin: 2rem auto;
+      background-color: #fafffc;
+      border-radius: 2rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+
+    .info-wrap-read-c {
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .info-wrap-read {
+      font-size: calc(12px + 0 * ((100vw - 320px) / 670));
+      font-weight: bold;
+    }
+
+    .info-wrap-read-s {
+      font-size: calc(12px + 0 * ((100vw - 320px) / 670));
+    }
+  </style>
+  <div class="wrap">
+
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li class="burger-btn">
+              <a>
+                <div><span></span><span></span><span></span></div>
+                <p>メニュー</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+        <nav>
+          <ul>
+            <li style="margin-right: 1rem;">
+              <a href=""><span class="fi ti-search"></span>
+                <p>見つける</p>
+              </a>
+            </li>
+            <li>
+              <a href=""><span class="fi ti-shopping-cart"></span>
+                <p>カート<span class="cart_number">1</span></p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <div class="burger-menu">
+        <div class="inner">
+
+          <div class="burger-menu-btn">
+            <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+          </div>
+
+          <ul class="navi-1st">
+            <li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">美咲町の返礼品</a></li>
+            <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+            <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+            <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+          </ul>
+
+          <ul class="navi-2nd">
+            <li><a href="/help/agreement">ご利用規約</a></li>
+            <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+            <li><a href="/help/privacy">個人情報保護方針</a></li>
+            <li><a href="/help/about">よくある質問</a></li>
+            <li><a href="/help/about">お問い合わせ</a></li>
+          </ul>
+          <!--
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">お問い合わせ</a></div>
+        </div>
+-->
+        </div>
+      </div>
+    </header>
+
+
+    <main id="about">
+      <div class="container">
+        <div class="ecv-Wrap">
+
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>新規会員登録</h1>
+            </div>
+          </div>
+
+          <div class="ecv-contentsWrap">
+
+            <div class="ec-cartTable">
+              <div class="ec-cartRole__progress">
+                <ul class="ec-progress-n">
+                  <li class="ec-progress__item">
+                    <div class="ec-progress__number">
+                      <span class="progress_circle"></span><span class="ec-progress__label">会員情報入力</span>
+                    </div>
+                  </li>
+                  <li class="ec-progress__item">
+                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">登録内容確認</span>
+                    </div>
+                  </li>
+                  <li class="ec-progress__item is-active">
+                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">仮登録メール</span>
+                    </div>
+                  </li>
+                  <li class="ec-progress__item">
+                    <div class="ec-progress__number"><span class="progress_circle"></span><span class="ec-progress__label">会員登録完了</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="ec-orderForm">
+
+              <div class="ec-rectHeading">
+                <p>仮登録メールを送信しました</p>
+              </div>
+
+              <div class="info-wrap">
+                <p class="info-wrap-read-c">
+                  ただいま、ご入力いただいたメールアドレス宛に、<br class="d-sm-none" />ご本人様確認用のメールをお送りいたしました。<br>メール本文内のURLをアクセスすると、<br class="d-sm-none" />本会員登録が完了となります。
+                </p>
+                <p class="info-wrap-read-c">
+                  メールタイトル：会員登録のご確認<br>メールアドレス：info-misakiu@furusato-direct.jp
+                </p>
+
+                <p class="info-wrap-read">
+                  ※※確認用メールが届かない場合※※<br>
+                  登録メールアドレスの入力間違いや迷惑メール設定などの可能性があります。なお、以下を確認しても解決しない場合は、お問い合わせフォームからお問い合わせください。
+                </p>
+                <p class="info-wrap-read-s">
+                  ※登録メールアドレスが間違っている場合、正しいメールアドレスであることを確認の上、こちらから再度新規会員登録手続きをお試しください。<br>
+                  ※迷惑メールフォルダに振り分けられている場合、迷惑メールフォルダに保存されている場合があります。受信フォルダでメールが確認できない場合は、迷惑メールフォルダをご確認ください。<br>
+                  ※受信拒否設定されている場合、迷惑メール設定を見直してください。受信許可リストに「furusato-direct.jp」を受信できるように設定を変更してください。同一のメールアドレスでは登録ができませんので、お問い合わせフォームからお問い合わせください。<br>
+                </p>
+
+              </div>
+
+              <div class="ec-cartRole__actions">
+                <a class="ec-blockBtn--cancel" href="/">会員情報入力へ戻る</a>
+              </div>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-kagamino.js"></script>
+</body>
+
+</html>

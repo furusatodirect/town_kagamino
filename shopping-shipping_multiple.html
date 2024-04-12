@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/style.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-kagamino.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <style type="text/css">
+    .wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100vh;
+      font-size: 1.5rem;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+      padding: 0;
+      margin-top: 5rem;
+    }
+
+    .ecv-header .ec-pageHeader {
+      padding: 1rem 0.5rem 1rem;
+      background-color: #fafffc;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .ecv-header .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+      border: none;
+      margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    /*shipping-wrap*/
+    .shipping-wrap {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .shipping-aera-proCount {
+      margin: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .shipping-aera-detail {
+      column-gap: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .shipping-aera-detail {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        row-gap: 1rem;
+      }
+
+      .shipping-aera-dleft {
+        width: 100% !important;
+        padding: 0;
+      }
+
+      .shipping-aera-proamount {
+        display: flex;
+        column-gap: 2rem;
+      }
+
+      .shipping-aera-detaiBtn a {
+        width: 300px;
+        height: 40px;
+      }
+
+      .shipping-aera-dright {
+        width: 300px !important;
+        margin: 2rem;
+      }
+
+    }
+
+    .shipping-aera-dleft {
+      width: 300px;
+      padding: 0;
+    }
+
+    .shipping-aera-proimg {
+      width: 100%;
+      padding: 0;
+    }
+
+    .shipping-aera-proimg img {
+      border-radius: 1.5rem;
+    }
+
+    .shipping-aera-dceter {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      row-gap: .3rem;
+    }
+
+    .shipping-aera-dceterrow {
+      display: flex;
+      flex-direction: column;
+      row-gap: .3rem;
+    }
+
+    .shipping-aera-proamount {
+      display: flex;
+      column-gap: 2rem;
+    }
+
+    .shipping-aera-dright {
+      width: 150px;
+      padding: 0;
+    }
+
+    .shipping-aera-detaiBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-bottom: none;
+    }
+
+    .shipping-aera-detaiBtn a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #c9c9c9;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      background-color: #f4f4f4;
+    }
+
+    .shipping-aera-proamount .ec-select label {
+      margin-right: 1rem;
+      font-weight: normal;
+    }
+
+    .shipping-aera-proamount .ec-select select {
+      border: solid 1px #c4c4c4;
+      border-radius: 8px;
+      width: auto;
+      height: 40px;
+    }
+
+    /*END    shipping-aera*/
+
+    /*.shipping-Btn*/
+    .shipping-Btn__actions {
+      margin: 0 auto;
+      box-sizing: border-box;
+      max-width: 1130px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    .shipping-Btn-action,
+    .shipping-Btn-add,
+    .shipping-Btn-rev,
+    .shipping-Btn-back {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .shipping-Btn-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #0dab65;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #fff;
+      font-family: 'Klee One', serif !important;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      transition: ease .2s;
+    }
+
+    .shipping-Btn-action::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .shipping-Btn-action:hover {
+      color: #0dab65;
+      background: #fff;
+      border: 2px solid #0dab65;
+    }
+
+    .shipping-Btn-action:hover::after {
+      color: #0dab65;
+    }
+
+    .shipping-Btn-add,
+    .shipping-Btn-rev {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: auto;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #fff;
+      width: 360px;
+      padding: .5rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #0dab65;
+      font-family: 'Klee One', serif !important;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: ease .2s;
+    }
+
+    .shipping-Btn-add p.Btn-read,
+    .shipping-Btn-rev p.Btn-read {
+      font-size: calc(8px + 2 * ((100vw - 320px) / 670));
+      padding: 0;
+    }
+
+    .shipping-Btn-add::after,
+    .shipping-Btn-rev::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #0dab65;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .shipping-Btn-add:hover,
+    .shipping-Btn-rev:hover {
+      color: #fff;
+      background: #0dab65;
+      border: 2px solid #0dab65;
+    }
+
+    .shipping-Btn-add:hover::after,
+    .shipping-Btn-rev:hover::after {
+      color: #fff;
+    }
+
+    .shipping-Btn-back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background-color: #fff;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #525263;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #c4c4c4;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+    }
+
+    .shipping-Btn-back:after {
+      content: "\e64a";
+      font-family: 'themify';
+      position: absolute;
+      left: 1.5rem;
+      color: #c4c4c4;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .shipping-Btn-back:hover {
+      color: #fff;
+      background: #c4c4c4;
+      border: 2px solid #c4c4c4;
+    }
+
+    .shipping-Btn-back:hover::after {
+      color: #fff;
+    }
+  </style>
+  <div class="wrap">
+
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li class="burger-btn">
+              <a>
+                <div><span></span><span></span><span></span></div>
+                <p>メニュー</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+        <nav>
+          <ul>
+            <li style="margin-right: 1rem;">
+              <a href=""><span class="fi ti-search"></span>
+                <p>見つける</p>
+              </a>
+            </li>
+            <li>
+              <a href=""><span class="fi ti-shopping-cart"></span>
+                <p>カート<span class="cart_number">1</span></p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <div class="burger-menu">
+        <div class="inner">
+
+          <div class="burger-menu-btn">
+            <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+          </div>
+
+          <ul class="navi-1st">
+            <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+            <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+            <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+          </ul>
+
+          <ul class="navi-2nd">
+            <li><a href="/help/agreement">ご利用規約</a></li>
+            <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+            <li><a href="/help/privacy">個人情報保護方針</a></li>
+            <li><a href="/help/about">よくある質問</a></li>
+            <li><a href="/help/about">お問い合わせ</a></li>
+          </ul>
+          <!--
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">お問い合わせ</a></div>
+        </div>
+-->
+        </div>
+      </div>
+    </header>
+
+
+    <main id="about">
+      <div class="container">
+        <div class="ecv-Wrap">
+
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お届け先の指定</h1>
+            </div>
+          </div>
+
+          <div class="ecv-contentsWrap">
+            <form id="shipping-multiple-form" method="post" action="{{ url('shopping_shipping_multiple') }}">
+
+              <div class="shipping-wrap">
+
+                <!--{{ form_widget(form._token) }}-->
+                <div class="shipping-aera-proCount">
+                  お申込者の住所以外へお礼の品をお届けするには、お届け先を選択してください。
+                </div>
+                <!--{% for error in errors %}-->
+                <div class="text-danger">
+                  <!--{{ error.message }}-->
+                </div>
+                <!--{% endfor %}-->
+
+                <div class="shipping-detail-wrap">
+                  <!--{% for orderItem in OrderItems %}-->
+                  <!--{% set ProductClass = orderItem.ProductClass %}-->
+                  <!--{% set Product = ProductClass.Product %}-->
+                  <!--{% set idx = loop.index0 %}-->
+                  <!--{% set itemvalue = 0 %}-->
+                  <div id="multiple_list__item_box--{{ idx }}" class="shipping-aera-detail">
+
+                    <div class="shipping-aera-dleft">
+                      <div class="shipping-aera-proimg">
+                        <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
+                      </div>
+                    </div>
+
+                    <div class="shipping-aera-dceter">
+                      <div class="shipping-aera-dceterrow">
+                        <div class="shipping-aera-prottl">
+                          <div class="shipping-aera-proname">{{ orderItem.productName }}ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</div>
+                        </div>
+                        <div class="shipping-aera-proamount">
+                          <!--{% if orderItem.productClass.classCategory1 %}-->
+                          <div class="shipping-aera__proamount" style="display: none;">
+                            <!--{{ orderItem.productClass.classCategory1 }}-->
+                          </div>
+                          <!--{% endif %}-->
+                          <!--{% if orderItem.productClass.classCategory2 %}-->
+                          <div class="shipping-aera__proamount" style="display: none;">
+                            <!--{{ orderItem.productClass.classCategory2 }}-->
+                          </div>
+                          <!--{% endif %}-->
+                          <div class="shipping-aera__proamount" style="display: none;">
+                            <!--{{ 'common.subtotal__with_separator'|trans }}{{ orderItem.totalPrice|price }}-->
+                          </div>
+                          <!--{% for key, value in compItemQuantities %}-->
+                          <!--{% if orderItem.productClass.id == key %}-->
+                          <div class="shipping-aera__proamount" id="multiple_list__value--{{ idx }}_{{ key }}">
+                            <!--{{ 'common.quantity'|trans }}：{{ value }}-->数量：5</div>
+                          <!--{% set itemvalue = value %}-->
+                          <!--{% endif %}-->
+                          <!--{% endfor %}-->
+                        </div>
+
+                        <div class="shipping-aera-proamount">
+
+                          <div id="item{{ idx }}">
+                            <!--{% for shipping in form.shipping_multiple[idx].shipping %}-->
+                            <div id="item{{ idx }}-{{ loop.index0 }}" data-itemidx="{{ loop.index0 }}" class="shipping-select-XXX item{{ idx }}">
+                              <div id="multiple_list__shipping_address--{{ idx }}_{{ loop.index0 }}" class="shipping-select-XXX">
+                                <div class="ec-select">
+                                  <label>
+                                    <!--{{ 'front.shopping.delivery_to'|trans }}-->お届け先</label>
+                                  <!--{{ form_widget(shipping.customer_address, {'attr': {'class': 'shipping'}}) }}
+                              {{ form_errors(shipping.customer_address) }}-->
+                                  <select id="form_shipping_multiple_0_shipping_0_customer_address" name="form[shipping_multiple][0][shipping][0][customer_address]" class="shipping form-control">
+                                    <option value="0" selected="selected">MLJ 東京都 港区南麻布 4-11-21</option>
+                                    <option value="1">MLJ 東京都 港区南麻布 1-1-1</option>
+                                  </select>
+                                </div>
+                              </div>
+                              <div id="multiple_list__shipping_quantity--{{ idx }}_{{ loop.index0 }}" class="ec-AddAddress__selectNumber">
+                                <div class="ec-input">
+                                  <label>
+                                    <!--{{ 'common.quantity'|trans }}--></label>
+                                  <!--{% for key, value in compItemQuantities %}
+                              {% if orderItem.productClass.id == key %}
+                              {% set quantity = shipping.quantity.vars.value ?: value %}
+                              {{ form_widget(shipping.quantity, {'attr': {'class': 'quantity'}, 'value': quantity}) }}
+                              {{ form_errors(shipping.quantity) }}
+                              {% endif %}
+                              {% endfor %}-->
+                                </div>
+                              </div>
+                              <button id="button__delete--{{ idx }}_{{ loop.index0 }}" type="button" class="btn ec-inlineBtn delete" {% if loop.index0 == 0 %} style="display:none;" {% endif %} data-itemidx="{{ idx }}-{{ loop.index0 }}">
+                                <!--{{'common.delete'|trans}}--></button>
+                            </div>
+                            <!--{% endfor %}-->
+                          </div>
+
+                          <div id="multiple_list__add_button{{ idx }}" class="ec-AddAddress__btn" style="display: none;">
+                            <button id="button__add{{ idx }}" type="button" class="ec-inlineBtn add" data-idx="{{ idx }}">
+                              <!--{{ 'front.shopping.shipping_add_new_shipping__short'|trans }}--></button>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <!--{% endfor %}-->
+                </div>
+
+
+                <div class="shipping-Btn__actions">
+                  <button id="button__confirm" type="submit" class="shipping-Btn-action">選択したお届け先に送る
+                    <!--{{ 'front.shopping.shipping_send_selected_shipping'|trans }}--></button>
+                  <a class="shipping-Btn-add" href="{{ url('shopping_shipping_multiple_edit') }}">
+                    新しいお届け先に送る
+                    <p class="Btn-read">新規お届け先を追加</p>
+                  </a>
+                  <!--{% if is_granted('ROLE_USER') == true %}-->
+                  <a class="shipping-Btn-rev" href="{{ url('mypage_delivery') }}">
+                    登録したお届け先の修正
+                    <p class="Btn-read">お届け先の一覧へ</p>
+                  </a>
+                  <!--{% endif %}-->
+                  <a class="shipping-Btn-back" href="{{ url('shopping') }}">前の画面に戻る</a>
+                </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+
+
+
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-kagamino.js"></script>
+</body>
+
+</html>

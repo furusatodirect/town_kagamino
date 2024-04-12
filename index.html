@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-kagamino.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li class="burger-btn">
+            <a>
+              <div><span></span><span></span><span></span></div>
+              <p>メニュー</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+      <nav>
+        <ul>
+          <!--          <li style="margin-right: 1rem;">
+            <a href=""><span class="fi ti-search"></span>
+              <p>見つける</p>
+            </a>
+          </li>
+          -->
+          <li>
+            <a href=""><span class="fi ti-shopping-cart"></span>
+              <p>カート<span class="cart_number">1</span></p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+    <div class="burger-menu">
+      <div class="inner">
+
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+          <div class="btn-common-n"><a href="">会員登録 / ログイン</a></div>
+        </div>
+
+        <ul class="navi-1st">
+          <li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">美咲町の返礼品</a></li>
+          <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+          <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+          <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+        </ul>
+
+        <ul class="navi-2nd">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/help/about">お問い合わせ</a></li>
+        </ul>
+
+        <div class="burger-menu-btn-n">
+          <div class="btn-common-n"><a href="">会員登録 / ログイン</a></div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+
+  <div class="container-fuild">
+
+    <div class="swiper toppicswiper">
+
+      <div class="swiper-wrapper top-view-area">
+
+        <div class="swiper-slide">
+          <div class="top-view">
+            <div class="top-img-wrapper">
+              <div class="top-img-bg" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(210,210,210,0) 70%, rgba(34,34,34,1) 100%), url(./img/topbackimg.png);" loading="lazy"></div>
+            </div>
+            <div class="top-img-bg-blur" style="background-image:url(./img/topbackimg.png);" loading="lazy"></div>
+            <div class="top-img-on">
+              <div class="top-img-tarea">
+                <div class="top-img-title">シャインマスカット 晴王</div>
+                <div class="top-img-read">美しい色と独特の風味、口に広がる爽やかな味わいが特徴です。</div>
+              </div>
+            </div>
+          </div>
+          <div class="top-img-bgw"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="top-view">
+            <div class="top-img-wrapper">
+              <div class="top-img-bg" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(210,210,210,0) 70%, rgba(34,34,34,1) 100%), url(./img/topbackimg2.png);" loading="lazy"></div>
+            </div>
+            <div class="top-img-bg-blur" style="background-image:url(./img/topbackimg2.png);" loading="lazy"></div>
+            <div class="top-img-on">
+              <div class="top-img-tarea">
+                <div class="top-img-title">美咲町産 コシヒカリ</div>
+                <div class="top-img-read">粒がしっかりとしており、上品な甘みと広がる香りが穏やかです。</div>
+              </div>
+            </div>
+          </div>
+          <div class="top-img-bgw"></div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="top-view">
+            <div class="top-img-wrapper">
+              <div class="top-img-bg" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(210,210,210,0) 70%, rgba(34,34,34,1) 100%), url(./img/topbackimg3.png);" loading="lazy"></div>
+            </div>
+            <div class="top-img-bg-blur" style="background-image:url(./img/topbackimg3.png);" loading="lazy"></div>
+            <div class="top-img-on">
+              <div class="top-img-tarea">
+                <div class="top-img-title">美咲どりの炭火焼き</div>
+                <div class="top-img-read">炭火焼きの香り高い風味と豊かな旨味が調和した、贅沢な味わいを楽しめます。</div>
+              </div>
+            </div>
+          </div>
+          <div class="top-img-bgw"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+
+  <main id="top">
+
+    <div class="container-fuild">
+      <div class="catebar">
+
+        <!--
+        <div class="catesearch">
+          <a href="" class="searchbox">
+            <div class="iconline"><span class="fi ti-search"></span></div>
+            <div class="catealltxt d-none d-md-block">カテゴリ</div>
+          </a>
+        </div>
+        -->
+
+        <div class="swiper sw_catelist">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a class="stretched-link" href="#1">すべて</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="#1">果物類</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="#2">肉</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">家具・工芸品・装飾品</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">加工品等</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">地域のお礼の品</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">雑貨・日用品</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">旅行</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">イベントやチケット等</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">菓子</a></div>
+            <div class="swiper-slide"><a class="stretched-link" href="">鍋セット</a></div>
+          </div>
+          <div class="swiper-scrollbar"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <section class="sec-my">
+      <div class="container">
+        <div class="title-header-s">
+          <div class="ttl">美咲町のイチオシ返礼品</div>
+        </div>
+        <div class="row g-2 g-md-3 card-pro">
+          <div class="col-6 col-md-3">
+            <div class="card">
+              <a href="https://misaki.furusato-direct.jp/products/detail/24">
+                <div class="detail-product-img">
+                  <img class="card-img-top" src="//d2xf9yvm8p5xm3.cloudfront.net/images/336661/1734835.jpg" alt="シャインマスカット 晴王 2kg ぶどう 葡萄 フルーツ 果物 岡山県 岡山県産 2024年 先行予約" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>24,000 円</p>
+                  </div>
+                  <div class="detail-product-name">シャインマスカット 晴王 2kg ぶどう 葡萄 フルーツ 果物 岡山県 岡山県産 2024年 先行予約</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card">
+              <a href="https://misaki.furusato-direct.jp/products/detail/23">
+                <div class="detail-product-img">
+                  <img class="card-img-top" src="//d2xf9yvm8p5xm3.cloudfront.net/images/336661/1734833.jpg" alt="ピオーネ 2kg （並） ぶどう 葡萄 フルーツ 果物 岡山県 岡山県産 2024年 先行予約" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>13,000 円</p>
+                  </div>
+                  <div class="detail-product-name">ピオーネ 2kg （並） ぶどう 葡萄 フルーツ 果物 岡山県 岡山県産 2024年 先行予約</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card">
+              <a href="https://misaki.furusato-direct.jp/products/detail/299">
+                <div class="detail-product-img">
+                  <img class="card-img-top" src="//d2xf9yvm8p5xm3.cloudfront.net/images/336661/2051458.jpg" alt="牛たん しゃぶしゃぶ セット 600g （ ゆず 塩ぽん酢 付き） 焼きしゃぶ" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>24,000 円</p>
+                  </div>
+                  <div class="detail-product-name">牛たん しゃぶしゃぶ セット 600g （ ゆず 塩ぽん酢 付き） 焼きしゃぶ</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="card">
+              <a href="https://misaki.furusato-direct.jp/products/detail/304">
+                <div class="detail-product-img">
+                  <img class="card-img-top" src="//d2xf9yvm8p5xm3.cloudfront.net/images/336661/2051472.jpg" alt="美咲どり の 炭火焼 （ 塩 ） 8袋（800g） 鶏 焼き鳥 総菜" loading="lazy">
+                </div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>13,000 円</p>
+                  </div>
+                  <div class="detail-product-name">美咲どり の 炭火焼 （ 塩 ） 8袋（800g） 鶏 焼き鳥 総菜</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="sec-my">
+      <div class="container">
+
+        <div class="title-header-s">
+          <div class="ttl">美咲町のイチオシ返礼品</div>
+          <div class="btn-all"><a href="./news/">返礼品一覧</a></div>
+        </div>
+
+        <div class="row g-2 g-md-3 card-pro">
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-01.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>17,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-02.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>56,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">桃 2024年 先行予約 岡山 白桃 5玉（1玉310g以上）等級：ロイヤル指定／糖度：12度以上 木箱入り もも モモ 岡山県産 国産 フルーツ 果物 ギフト</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-03.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>42,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">おかやま和牛(A5等級)ステーキ 600g</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-04.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>19,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">2024年先行予約 『京鴨』 鴨肉 ふるさと串盛り20本セット（約750g）【配達不可：離島】</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-05.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>26,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">お米 コシヒカリ 10kg 岡山県美咲町産 おこめ 米 国産</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-01.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>17,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-02.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>56,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">桃 2024年 先行予約 岡山 白桃 5玉（1玉310g以上）等級：ロイヤル指定／糖度：12度以上 木箱入り もも モモ 岡山県産 国産 フルーツ 果物 ギフト</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-03.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>42,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">おかやま和牛(A5等級)ステーキ 600g</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-04.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>19,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">2024年先行予約 『京鴨』 鴨肉 ふるさと串盛り20本セット（約750g）【配達不可：離島】</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-15">
+            <div class="card">
+              <a href="product_detail.html">
+                <div class="detail-product-img"><img class="card-img-top" src="./img/gift/misaki-product-05.jpg" alt="..." loading="lazy" /></div>
+                <div class="card-body">
+                  <div class="detail-price-reco">
+                    <p>26,000 円</p>
+                    <button class="favorite"><i class="fa-sharp fa-solid fa-heart"></i></button>
+                  </div>
+                  <div class="detail-product-name">お米 コシヒカリ 10kg 岡山県美咲町産 おこめ 米 国産</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-my">
+
+      <div class="container">
+        <div class="txt-diagonal">
+          <span>カンタン！</span>
+        </div>
+        <div class="ttl">寄付手続き解説</div>
+      </div>
+
+      <div class="container-in howto">
+        <div class="col-12 col-xl-6">
+
+          <div class="row g-2 g-md-3 card-howto-step">
+            <div class="col-4 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  STEP 1
+                </div>
+                <div class="detail-howto-img"><img src="./img/guide/howto1.png"></div>
+                <div class="card-title">控除上限額を確認する</div>
+              </div>
+            </div>
+
+            <div class="col-4 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  STEP 2
+                </div>
+                <div class="detail-howto-img"><img src="./img/guide/howto2.png"></div>
+                <div class="card-title">返礼品を選んで申込む</div>
+              </div>
+            </div>
+
+            <div class="col-4 col-xl-4">
+              <div class="card">
+                <div class="card-header">
+                  STEP 3
+                </div>
+                <div class="detail-howto-img"><img src="./img/guide/howto3.png"></div>
+                <div class="card-title">控除手続きをする</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row g-2 g-md-3 card-howto-simulator">
+            <div class="col-12">
+
+              <div id="sec-simulator">
+                <div class="bg-simulator">
+                  <p class="bg-simulator-header">
+                    STEP 1<br>控除上限額を確認する
+                  </p>
+                  <div class="bg-simulator-readaera">
+                    「年収」と「家族構成」から、<br class="sp" />実質負担2,000円でできる控除上限額の目安を表示します。
+                  </div>
+
+                  <div class="bg-simulator-body">
+                    <div class="bg-simulator-row">
+                      <span class="bg-simulator-req">
+                        必須
+                      </span>
+                      <div class="bg-simulator-tq">
+                        あなたの年収
+                      </div>
+                      <div class="bg-simulator-select">
+                        <select id="select_income">
+                          <option selected="">選択してください</option>
+                          <option>300万円</option>
+                          <option>325万円</option>
+                          <option>350万円</option>
+                          <option>375万円</option>
+                          <option>400万円</option>
+                          <option>425万円</option>
+                          <option>450万円</option>
+                          <option>475万円</option>
+                          <option>500万円</option>
+                          <option>525万円</option>
+                          <option>550万円</option>
+                          <option>575万円</option>
+                          <option>600万円</option>
+                          <option>625万円</option>
+                          <option>650万円</option>
+                          <option>675万円</option>
+                          <option>700万円</option>
+                          <option>725万円</option>
+                          <option>750万円</option>
+                          <option>775万円</option>
+                          <option>800万円</option>
+                          <option>825万円</option>
+                          <option>850万円</option>
+                          <option>875万円</option>
+                          <option>900万円</option>
+                          <option>925万円</option>
+                          <option>950万円</option>
+                          <option>975万円</option>
+                          <option>1000万円</option>
+                          <option>1100万円</option>
+                          <option>1200万円</option>
+                          <option>1300万円</option>
+                          <option>1400万円</option>
+                          <option>1500万円</option>
+                          <option>1600万円</option>
+                          <option>1700万円</option>
+                          <option>1800万円</option>
+                          <option>1900万円</option>
+                          <option>2000万円</option>
+                          <option>2100万円</option>
+                          <option>2200万円</option>
+                          <option>2300万円</option>
+                          <option>2400万円</option>
+                          <option>2500万円</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="bg-simulator-row">
+                      <span class="bg-simulator-req">
+                        必須
+                      </span>
+                      <div class="bg-simulator-tq">
+                        あなたの家族構成
+                      </div>
+                      <div class="bg-simulator-select">
+                        <select id="select_family">
+                          <option selected="">選択してください</option>
+                          <option>独身又は共働き</option>
+                          <option>夫婦</option>
+                          <option>共働き＋子１人（高校生）</option>
+                          <option>共働き＋子１人（大学生）</option>
+                          <option>夫婦＋子１人（高校生）</option>
+                          <option>共働き＋子２人（大学生と高校生）</option>
+                          <option>夫婦＋子２人（大学生と高校生）</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div id="bg-result" class="bg-simulator-result col-12 col-xl-7 mx-auto">
+                      <p>納税額上限の目安</p>
+                      <input id="result_value" type="text" value="" readonly="" class="bg-simulator-ta">
+                      <div class="caution-txt">限度度額を超えた場合は、超過分について自己負担することになります。</div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="simulator-exc mx-auto">
+                  <p>
+                    ※本シミュレーション結果は参考目安です。正確な金額を確認するには、居住地の税務署や税理士にお問い合わせください。<br>
+                    ※「夫婦子１人（小学生）」は「夫婦」と同額です。「夫婦子２人（高校生と中学生）」は「夫婦子１人（高校生）」と同額です。<br>
+                    ※本シミュレーションは給与所得者を対象に計算しており、控除には社会保険料、配偶者、扶養親族が考慮されています。<br>
+                    ※年金収入のみの場合や個人事業主、住宅ローン控除や医療費控除を受けている場合は、寄付上限額が異なりますのでご注意ください。<br>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <div id="sec-howto-product">
+            <div class="row">
+              <div class="col-12">
+
+                <div class="howto-product-header">
+                  STEP 2<br>返礼品を選んで申込む
+                </div>
+
+                <div class="howto-product-body position-relative">
+                  <div class="card-pro">
+
+                    <div class="ani-pro">
+                      <div class="ani-pro-wrap">
+                        <ul class="ani-pro-list ani-pro-list_left">
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-01.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-02.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-03.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-04.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-05.jpg" alt></li>
+                        </ul>
+                        <ul class="ani-pro-list ani-pro-list_left">
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-01.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-02.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-03.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-04.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-05.jpg" alt></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="ani-pro position-relative">
+                      <div class="ani-pro-wrap">
+                        <ul class="ani-pro-list ani-pro-list_right">
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-06.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-07.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-08.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-09.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-10.jpg" alt></li>
+                        </ul>
+                        <ul class="ani-pro-list ani-pro-list_right">
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-06.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-07.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-08.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-09.jpg" alt></li>
+                          <li class="ani-pro-item"><img src="./img/gift/misaki-howto-pro-10.jpg" alt></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                  </div><a href="#1" class="stretched-link"></a>
+                </div>
+
+                <div class="btn-area">
+                  <a class="btn-commons" href="">
+                    <div class="ttls">美咲町の返礼品一覧</div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div id="sec-howto-app">
+            <div class="row">
+              <div class="col-12">
+
+                <div class="sec-howto-app-header">
+                  STEP 3<br>控除手続きをする
+                </div>
+
+                <div class="row">
+                  <div class="col-12">
+
+                    <div class="sec-howto-app-body">
+
+                      <table class="table table-bordered table-radius">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col">ワンストップ特例制度</th>
+                            <th scope="col">確定申告</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th class="align-middle" scope="row">メリット</th>
+                            <td>確定申告が不要で寄付金控除が受けられる<br></td>
+                            <td>所得税と住民税から税額控除を受けられる</td>
+                          </tr>
+                          <tr>
+                            <th class="align-middle" scope="row">寄付先の自治体数</th>
+                            <td>5自治体まで</td>
+                            <td>制限なし</td>
+                          </tr>
+                          <tr>
+                            <th class="align-middle" scope="row">申請方法</th>
+                            <td class="align-middle">各自治体に申請書郵送<br>または<br>オンライン申請<br>(自治体マイページ)</td>
+                            <td class="align-middle">寄附金受領証明書を確定申告書類と共に提出</td>
+                          </tr>
+                          <tr>
+                            <th class="align-middle" scope="row">申請・申告の期限</th>
+                            <td>寄附した翌年の<span class="ulb">1月10日必着</span></td>
+                            <td>寄附した翌年の<span class="ulb">3月15日</span></td>
+                          </tr>
+                          <tr>
+                            <th class="align-middle" scope="row">税金控除の対象</th>
+                            <td><span class="ulb">住民税</span>から全額控除(減額)</td>
+                            <td><span class="ulb">所得税</span>からの還付と<br><span class="ulb">住民税</span>から控除</td>
+                          </tr>
+                          <tr>
+                            <th class="align-middle" scope="row">税金控除の時期</th>
+                            <td>申請年の6月から翌年5月まで住民税から毎月控除</span></td>
+                            <td>・所得税 → 申告後およそ1～2ヵ月後に還付<br>・住民税 → 申請年の6月から翌年5月まで住民税から毎月控除</span></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="sec-howto-bnr">
+                        <p>美咲町では、「自治体マイページ」による「オンラインワンストップ特例申請」を推奨いたします。</p>
+                        <a href="https://mypg.jp" target="_blank"><img class="" src="./img/bnr_sec-howto-bnr.png" alt="..." loading="lazy" /></a>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+    </section>
+
+
+
+    <section class="sec-my">
+      <div class="container">
+
+        <div class="ttl">寄付の使い道</div>
+
+        <div class="row container-in">
+          <div class="col-12 col-xl-10">
+            <div class="row g-2 g-md-3 card-use">
+              <div class="col-6 col-md-3">
+                <div class="card">
+                  <div class="detail-use-img"><img class="card-img-w" src="./img/misaki-use-01.jpg" alt="..." loading="lazy" /></div>
+                  <div class="card-body">
+                    <div class="detail-use-ttl">教育</div>
+                    <div class="detail-use-read">
+                      私たちの自治体は教育の分野で未来を築きます。<br>
+                      寄付は、教育環境の向上や学習プログラムの拡充に活用され、地域の子供たちが知識と夢を育む手助けとなります。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="card">
+                  <div class="detail-use-img"><img class="card-img-w" src="./img/misaki-use-02.jpg" alt="..." loading="lazy" /></div>
+                  <div class="card-body">
+                    <div class="detail-use-ttl">子育て</div>
+                    <div class="detail-use-read">
+                      寄付金は、地域の子どもたちに質の高い教育、子育て支援プログラムの拡充や、教育環境の向上に活用され、未来の担い手たちを支え、共に歩む地域社会を築きます。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="card">
+                  <div class="detail-use-img"><img class="card-img-w" src="./img/misaki-use-03.jpg" alt="..." loading="lazy" /></div>
+                  <div class="card-body">
+                    <div class="detail-use-ttl">地場産業</div>
+                    <div class="detail-use-read">
+                      寄付は地元企業の成長や雇用創出に直結し、地域社会の発展に寄与します。<br>
+                      良質な雇用機会を提供することで、まちをより魅力的で持続可能な場所にします。
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="card">
+                  <div class="detail-use-img"><img class="card-img-w" src="./img/misaki-use-04.jpg" alt="..." loading="lazy" /></div>
+                  <div class="card-body">
+                    <div class="detail-use-ttl">まちづくり</div>
+                    <div class="detail-use-read">
+                      皆様の温かい支援は、まちづくりの力となります。<br>
+                      公共施設の整備、環境改善など、市民の暮らしを豊かにする様々なプロジェクトに資金を充てます。
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 col-xl-10 mx-auto">
+            <div class="card-use-dstatus">
+              <div class="card">
+                <div class="card-header">
+                  ふるさと納税寄附状況について
+                </div>
+                <div class="card-body">
+                  <p class="use-dstatus-read">
+                    全国から美咲町を応援いただき、大変ありがとうございました。<br>
+                    皆さまからのご厚志は大切に美咲町のまちづくりに活用させていただきます。<br>
+                    寄附状況を以下にご報告いたします。
+                  </p>
+                  <div class="row use-dstatus-list">
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/H28_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">平成２８年度ふるさと納税寄付状況</span></a>
+                    </div>
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/H29_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">平成２９年度ふるさと納税寄付状況</span></a>
+                    </div>
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/H30_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">平成３０年度ふるさと納税寄付状況</span></a>
+                    </div>
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/R01_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">令和元年度ふるさと納税寄付状況</span></a>
+                    </div>
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/R02_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">令和２年度ふるさと納税寄付状況</span></a>
+                    </div>
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/R03_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">令和３年度ふるさと納税寄付状況</span></a>
+                    </div>
+                    <div class="col-md-3 use-dstatus-file">
+                      <a href="{{ asset('assets/pdf/R04_misaki_jisseki.pdf', 'user_data') }}" target="_blank"><span class="icon-pdf">令和４年度ふるさと納税寄付状況</span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="sec-my">
+      <div class="container-fuild">
+
+        <div class="ttl">町長からのご挨拶</div>
+
+        <div class="row mayor-bg">
+          <div class="mayor-detail">
+
+            <div class="mayor-img">
+              <div class="item-wrapper">
+                <img class="" src="./img/mayor_misaki.jpg" loading="lazy" />
+              </div>
+            </div>
+            <p class="mayor-name">
+              美咲町長<br>青野 高陽（あおの たかはる）
+            </p>
+
+            <div class="col-12 col-xl-6">
+              <p class="mayor-txt">
+                2023年：13,017人　⇒　2040年：8,881人、これは美咲町の人口予測です。<br>
+                　2040年には人口が３割以上減少するという衝撃的な予測で、これを念頭に、この町の未来をどう描き、どうしていくか考え、実行していくことが私の使命です。笑顔あふれる未来を描き、今できることを一生懸命に！<br>
+                　町では、現在50年に一度の大規模プロジェクトを進めています。令和５年４月に開校した旭学園、令和６年４月開校予定の柵原学園、中央・旭地域の多世代交流拠点の整備です。これも人口減少を踏まえた、未来への投資です。<br>
+                　これに加え令和５年度は、<br>
+                －「みんなの　幸せの　力に！」－<br>
+                －「こどもの笑顔は　みんなの幸せ」－<br>
+                「幸せ」と「こどもの笑顔」をキーワードに、こどもの笑顔があふれる町づくり、こどもの幸せ最優先の仕組みづくりに重点を置き、町を挙げて取り組みます。<br>
+                －「ひと　輝くまち　みさき」－<br>
+                この地域で長くはぐくまれてきた奉仕の精神と、強い絆を生かした「人の力」による地域の再生<br>
+                －「（み）んなで　（さ）さえあい　（き）ょうりょくする」－<br>
+                住民のみなさんと行政がしっかりタッグを組み、だれもが必要とし、必要とされる。そんなまちこそ私の目指している姿です。<br>
+                　今できることをしっかり行い、未来に向けて種をまき、その種が10数年後に芽吹く。2040年この町がどうなっているか。人口減少は避けられず、様々な課題が出ていると思います。それでもこの町で生まれ・育ったみなさんが、この町で生まれ・育ってよかった、と誇れるような町になるように！<br>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+
+    <section class="sec-my">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-12 col-xl-6 mx-auto">
+            <div class="title-header">
+              <div class="ttl">美咲町のお知らせ</div>
+              <div class="btn-all"><a href="./news/">お知らせ一覧</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row container-in">
+          <div class="col-12 col-xl-6">
+
+            <ul class="misaki-news">
+              <li>
+                <a href="./news/detail.html">
+                  <p class="date">2022.09.10</p>
+                  <p class="text">本日、人気の返礼品が再入荷いたしました！</p>
+                </a>
+              </li>
+              <li>
+                <a href="./news/detail.html">
+                  <p class="date">2022.09.09</p>
+                  <p class="text">大地の恵みを活かし、人が輝き躍動するまち。XXXの魅力を余すことなくご紹介いたします。</p>
+                </a>
+              </li>
+              <li>
+                <a href="./news/detail.html">
+                  <p class="date">2022.09.08</p>
+                  <p class="text">ふるさと納税の寄付の使い道をご紹介。皆さまからのご厚意が、XXXの未来を築きます。</p>
+                </a>
+              </li>
+              <li>
+                <a href="./news/detail.html">
+                  <p class="date">2022.09.07</p>
+                  <p class="text">XXXをもっと応援しませんか？　長期的な支援だからできる事があります。</p>
+                </a>
+              </li>
+              <li>
+                <a href="./news/detail.html">
+                  <p class="date">2022.09.06</p>
+                  <p class="text">お礼の品を提供しているXXXを盛り上げるべく奮闘している事業者の皆さまをご紹介いたします。</p>
+                </a>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="sec-my">
+      <div class="container">
+
+        <div class="ttl">美咲町リンク</div>
+
+        <div class="col-11 col-xl-10 mx-auto link-misaki">
+          <iframe class="w-100 mx-auto map-misaki" src="https://platinumaps.jp/d/okayama-misaki/@35.000824,133.901181,12-13z" allow="geolocation"></iframe>
+        </div>
+
+        <div class="col-12 col-xl-6 mx-auto link-misaki">
+          <ul class="bnrnav">
+            <li><a target="_blank" href="https://www.town.misaki.okayama.jp/contents/tamagokakegohan/"><img src="./img/bnr-misaki-01.jpg"></a></li>
+            <li><a target="_blank" href="https://www.camera-girls.net/featured/misaki-cho/"><img src="./img/bnr-misaki-02.jpg"></a></li>
+            <li><a target="_blank" href="https://www.town.misaki.okayama.jp/contents/cycling/"><img src="./img/bnr-misaki-03.jpg"></a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+
+
+  </main>
+  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+  <footer>
+    <div class="col-12 col-xl-6 mx-auto inner">
+      <ul class="subnav">
+        <li><a href="/help/agreement">ご利用規約</a></li>
+        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+        <li><a href="/help/privacy">個人情報保護方針</a></li>
+        <li><a href="/help/about">よくある質問</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      <a href="{{ url('homepage') }}">
+        <img src="./img/misaki.png" />
+        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+      </a>
+    </div>
+
+  </footer>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-kagamino.js"></script>
+
+</body>
+
+</html>

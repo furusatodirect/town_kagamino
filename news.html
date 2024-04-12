@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-kagamino.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <style>
+    .ec-pager {
+      list-style: none;
+      list-style-type: none;
+      margin: 3rem auto;
+      padding: 1em 0;
+      text-align: center;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 670));
+    }
+
+    .ec-pager .ec-pager__item--active {
+      background: #F3F3F3;
+    }
+
+    .ec-pager .ec-pager__item,
+    .ec-pager .ec-pager__item--active {
+      display: inline-block;
+      min-width: 29px;
+      padding: 0 3px 0 2px;
+      text-align: center;
+      position: relative;
+    }
+
+    .ec-pager .ec-pager__item a,
+    .ec-pager .ec-pager__item--active a {
+      color: inherit;
+      display: block;
+      line-height: 1.8;
+      padding: 5px 1em;
+      text-decoration: none;
+    }
+  </style>
+
+
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li class="burger-btn">
+            <a>
+              <div><span></span><span></span><span></span></div>
+              <p>メニュー</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+      <nav>
+        <ul>
+          <li style="margin-right: 1rem;">
+            <a href=""><span class="fi ti-search"></span>
+              <p>見つける</p>
+            </a>
+          </li>
+          <li>
+            <a href=""><span class="fi ti-shopping-cart"></span>
+              <p>カート<span class="cart_number">1</span></p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+
+    <div class="burger-menu">
+      <div class="inner">
+
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+        </div>
+
+        <ul class="navi-1st">
+          <li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">美咲町の返礼品</a></li>
+          <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+          <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+          <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+        </ul>
+
+        <ul class="navi-2nd">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/help/about">お問い合わせ</a></li>
+        </ul>
+
+      </div>
+    </div>
+  </header>
+
+
+
+
+  <main id="top">
+
+
+    <section class="newsWrap">
+      <div class="container">
+
+        <div class="news-list-header">
+          <div class="ttl">美咲町のお知らせ一覧</div>
+        </div>
+
+        <div class="row g-2 g-md-3 card-pro">
+
+
+
+          <ul class="misaki-news">
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.10</p>
+                <p class="text">本日、人気の返礼品が再入荷いたしました！</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.09</p>
+                <p class="text">大地の恵みを活かし、人が輝き躍動するまち。XXXの魅力を余すことなくご紹介いたします。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.08</p>
+                <p class="text">ふるさと納税の寄付の使い道をご紹介。皆さまからのご厚意が、XXXの未来を築きます。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.07</p>
+                <p class="text">XXXをもっと応援しませんか？　長期的な支援だからできる事があります。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.06</p>
+                <p class="text">お礼の品を提供しているXXXを盛り上げるべく奮闘している事業者の皆さまをご紹介いたします。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.10</p>
+                <p class="text">本日、人気の返礼品が再入荷いたしました！</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.09</p>
+                <p class="text">大地の恵みを活かし、人が輝き躍動するまち。XXXの魅力を余すことなくご紹介いたします。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.08</p>
+                <p class="text">ふるさと納税の寄付の使い道をご紹介。皆さまからのご厚意が、XXXの未来を築きます。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.07</p>
+                <p class="text">XXXをもっと応援しませんか？　長期的な支援だからできる事があります。</p>
+              </a>
+            </li>
+            <li>
+              <a href="./news/detail.html">
+                <p class="date">2022.09.06</p>
+                <p class="text">お礼の品を提供しているXXXを盛り上げるべく奮闘している事業者の皆さまをご紹介いたします。</p>
+              </a>
+            </li>
+
+          </ul>
+
+
+
+        </div>
+      </div>
+    </section>
+
+
+    <div class="ec-pagerRole">
+      <ul class="ec-pager">
+        <li class="ec-pager__item--active"><a href="/products/list?orderby=1&amp;pageno=1"> 1 </a></li>
+        <li class="ec-pager__item"><a href="/products/list?orderby=1&amp;pageno=2"> 2 </a></li>
+        <li class="ec-pager__item"><a href="/products/list?orderby=1&amp;pageno=3"> 3 </a></li>
+        <li class="ec-pager__item"><a href="/products/list?orderby=1&amp;pageno=4"> 4 </a></li>
+        <li class="ec-pager__item"><a href="/products/list?orderby=1&amp;pageno=5"> 5 </a></li>
+        <li class="ec-pager__item">...</li>
+        <li class="ec-pager__item">
+          <a href="/products/list?orderby=1&amp;pageno=2">次へ</a></li>
+        <li class="ec-pager__item">
+          <a href="/products/list?orderby=1&amp;pageno=13">最後へ</a></li>
+      </ul>
+    </div>
+
+
+  </main>
+  <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+  <footer>
+    <div class="col-12 col-xl-6 mx-auto inner">
+      <ul class="subnav">
+        <li><a href="/help/agreement">ご利用規約</a></li>
+        <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+        <li><a href="/help/privacy">個人情報保護方針</a></li>
+        <li><a href="/help/about">よくある質問</a></li>
+        <li><a href="/contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+
+    <div class="copyright">
+      <a href="{{ url('homepage') }}">
+        <img src="./img/misaki.png" />
+        <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+      </a>
+    </div>
+
+  </footer>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-kagamino.js"></script>
+
+</body>
+
+</html>

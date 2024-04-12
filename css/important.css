@@ -1,0 +1,32 @@
+
+.container{max-width:1132px;margin:auto;width:96%;}
+
+header .categorynav ul{overflow-x: auto;white-space: nowrap;-ms-overflow-style: none;scrollbar-width: none;-webkit-overflow-scrolling: touch;margin/*-left*/:0 calc((100% - 1132px) / 2);}
+
+.burger-menu{
+  visibility: hidden;
+  right: calc((100% - 1300px) / 4);
+  top: 6px;
+  position: absolute;
+  width: 375px;
+  height: auto/*625px*/;
+  background:#fff;
+  border-radius:12px;
+  border:1px solid #C8C8C8;
+  opacity: 0;
+  transition: opacity .5s;
+  z-index:98;
+}
+
+
+.p-box li{width:23.4%;margin-bottom:50px;margin-right:2.13%;}
+
+
+
+@media screen and (max-width:1200px){
+  .p-box li .mask{height:22vw;}
+  #gift.detail .floating_cart{right:10%;}
+  #crowdfunding.detail .sec1 .Rside .kifu input{width:85%;}
+  
+  }
+  

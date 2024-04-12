@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/style.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-kagamino.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <style type="text/css">
+    .wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100vh;
+      font-size: 1.5rem;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+      padding: 0;
+      margin-top: 5rem;
+    }
+
+    .ecv-header .ec-pageHeader {
+      padding: 1rem 0.5rem 1rem;
+      background-color: #fafffc;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .ecv-header .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+      border: none;
+      margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    /* ec-blockBtn*/
+    .ec-blockBtn--action,
+    .ec-cartRole__action,
+    .ec-blockBtn--cancel {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    .ec-blockBtn--action,
+    .ec-cartRole__action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #0dab65;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #fff;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      transition: ease .2s;
+    }
+
+    .ec-blockBtn--action::after,
+    .ec-cartRole__action::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-blockBtn--action:hover,
+    .ec-cartRole__action:hover {
+      color: #0dab65;
+      background: #fff;
+      border: 2px solid #0dab65;
+    }
+
+    .ec-blockBtn--action:hover::after,
+    .ec-cartRole__action:hover::after {
+      color: #0dab65;
+    }
+
+    .ec-blockBtn--cancel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background-color: #fff;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #525263;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #c4c4c4;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+    }
+
+    .ec-blockBtn--cancel::after {
+      content: "\e64a";
+      font-family: 'themify';
+      position: absolute;
+      left: 1.5rem;
+      color: #c4c4c4;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-blockBtn--cancel:hover {
+      color: #fff;
+      background: #c4c4c4;
+      border: 2px solid #c4c4c4;
+    }
+
+    .ec-blockBtn--cancel:hover::after {
+      color: #fff;
+    }
+
+    .ec-cartTable .ec-blockBtn--action {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-cartTable .ec-blockBtn--action {
+        display: block;
+      }
+    }
+
+    .ec-cartRole .ec-cartRole__actions {
+      width: 100%;
+      margin: 2rem 0;
+    }
+
+    /*END ec-blockBtn*/
+
+
+
+    /*ec-mypg*/
+    .ec-mypg-wrap {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ec-mypg-proCount {
+      margin: 2rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .ec-mypg-detail {
+      column-gap: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 3rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-mypg-detail {
+        display: flex;
+        row-gap: 1rem;
+      }
+
+      .ec-mypg-dceter {
+        font-size: calc(12px + 0*((100vw - 320px) / 670));
+      }
+
+      .ec-mypg-dright {
+        width: 80px !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      .ec-mypg-proamount {
+        display: flex;
+        justify-content: center;
+        column-gap: 2rem;
+      }
+
+      .ec-mypg-detaiChe a,
+      .ec-mypg-detaiBtn a {
+        width: 80px;
+        height: 30px;
+      }
+    }
+
+    .ec-mypg-dleft {
+      width: 300px;
+      padding: 0;
+    }
+
+    .ec-mypg-proimg {
+      width: 100%;
+      padding: 0;
+    }
+
+    .ec-mypg-proimg img {
+      border-radius: 1.5rem;
+    }
+
+    .ec-mypg-dceter {
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      row-gap: .3rem;
+    }
+
+    .ec-mypg-dceterrow {
+      display: flex;
+      flex-direction: column;
+      row-gap: .3rem;
+    }
+
+    .ec-mypg-proamount {
+      display: flex;
+      column-gap: 2rem;
+    }
+
+    .ec-mypg-dright {
+      width: 150px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: .5rem;
+    }
+
+    .ec-mypg-detaiBtn,
+    .ec-mypg-detaiChe {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-bottom: none;
+    }
+
+    .ec-mypg-detaiChe a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #525263;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: calc(12px + 0*((100vw - 320px) / 670));
+      background-color: #525263;
+      color: #fff;
+    }
+
+    .ec-mypg-detaiBtn a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #c9c9c9;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      font-size: calc(12px + 0*((100vw - 320px) / 670));
+      background-color: #f4f4f4;
+    }
+
+    /*END    ec-mypg*/
+  </style>
+  <div class="wrap">
+
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li class="burger-btn">
+              <a>
+                <div><span></span><span></span><span></span></div>
+                <p>メニュー</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+        <nav>
+          <ul>
+            <li style="margin-right: 1rem;">
+              <a href=""><span class="fi ti-search"></span>
+                <p>見つける</p>
+              </a>
+            </li>
+            <li>
+              <a href=""><span class="fi ti-shopping-cart"></span>
+                <p>カート<span class="cart_number">1</span></p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <div class="burger-menu">
+        <div class="inner">
+
+          <div class="burger-menu-btn">
+            <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+          </div>
+
+          <ul class="navi-1st">
+            <li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">美咲町の返礼品</a></li>
+            <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+            <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+            <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+          </ul>
+
+          <ul class="navi-2nd">
+            <li><a href="/help/agreement">ご利用規約</a></li>
+            <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+            <li><a href="/help/privacy">個人情報保護方針</a></li>
+            <li><a href="/help/about">よくある質問</a></li>
+            <li><a href="/help/about">お問い合わせ</a></li>
+          </ul>
+          <!--
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">お問い合わせ</a></div>
+        </div>-->
+
+        </div>
+      </div>
+    </header>
+
+
+    <main id="about">
+      <div class="container">
+        <div class="ecv-Wrap">
+
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お届け先一覧</h1>
+            </div>
+          </div>
+
+          <div class="ecv-contentsWrap">
+
+            <div class="ec-mypg-wrap">
+              <div class="ec-mypg-proCount">1件のお届け先登録があります</div>
+              <div class="ec-mypg-detail">
+                <div class="ec-mypg-dceter">
+                  <div class="ec-mypg-reqDat">宛先名： MLJ</div>
+                  <div class="ec-mypg-reqNo">配送先： 〒1060047 東京都港区南麻布1-1-1</div>
+                  <div class="ec-mypg-reqSt">連絡先： 0357890445</div>
+                </div>
+                <div class="ec-mypg-dright">
+                  <div class="ec-mypg-detaiChe">
+                    <a href="/" class="">変更する</a>
+                  </div>
+                  <div class="ec-mypg-detaiBtn">
+                    <a href="/" class="">削除する</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="ec-cartRole__actions">
+              <a class="ec-blockBtn--action" href="">お届け先を変更する</a>
+              <a class="ec-blockBtn--cancel" href="/">戻る</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+
+
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-kagamino.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>local</title>
+  <link rel="shortcut icon" href="./img/favicon.png" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/bootstrap-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/themify-icons.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/destyle.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/base.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slider-pro.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/all.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/swiper-bundle.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/slick-theme.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/nouislider.min.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/style.css" media="all" />
+  <link rel="stylesheet" property="stylesheet" href="./css/common-kagamino.css" media="all" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <style type="text/css">
+    .wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 100%;
+      min-height: 100vh;
+      font-size: 1.5rem;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Klee One', serif;
+    }
+
+    .ecv-Wrap {
+      margin: 3rem auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ecv-header {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+      padding: 0;
+      margin-top: 5rem;
+    }
+
+    .ecv-header .ec-pageHeader {
+      padding: 1rem 0.5rem 1rem;
+      background-color: #fafffc;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .ecv-header .ec-pageHeader h1 {
+      border-top: none;
+      display: inline-block;
+      font-size: calc(20px + 2 * ((100vw - 320px) / 670));
+      border: none;
+      margin: 0;
+    }
+
+    .ecv-contentsWrap {
+      margin: 0 10%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ecv-contentsWrap {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    /*ec-progress__item*/
+    .ec-cartTable {
+      display: flex;
+      border-top: none;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ec-progress .is-complete .ec-progress__number {
+      background: #0dab65;
+      color: white;
+    }
+
+    .ec-progress .is-complete .ec-progress__label {
+      color: #0dab65;
+      font-weight: bold;
+    }
+
+    .ec-progress .ec-progress__label {
+      color: #c8c8c8;
+    }
+
+    .ec-progress .ec-progress__number {
+      background: #c4c4c4;
+      color: white;
+    }
+
+    .ec-progress .ec-progress__item:after {
+      background: #c4c4c4;
+      height: 0.2em;
+      top: 30%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-progress .ec-progress__item:after {
+        top: 20%;
+      }
+    }
+
+    /*END ec-progress__item*/
+
+    /* ec-blockBtn*/
+    .ec-blockBtn--action,
+    .ec-cartRole__action,
+    .ec-blockBtn--cancel {
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .ec-cartRole__actions {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1rem;
+    }
+
+    .ec-blockBtn--action,
+    .ec-cartRole__action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #0dab65;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #fff;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      transition: ease .2s;
+    }
+
+    .ec-blockBtn--action::after,
+    .ec-cartRole__action::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #fff;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-blockBtn--action:hover,
+    .ec-cartRole__action:hover {
+      color: #0dab65;
+      background: #fff;
+      border: 2px solid #0dab65;
+    }
+
+    .ec-blockBtn--action:hover::after,
+    .ec-cartRole__action:hover::after {
+      color: #0dab65;
+    }
+
+    .ec-blockBtn--cancel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background-color: #fff;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #525263;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #c4c4c4;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+    }
+
+    .ec-blockBtn--cancel::after {
+      content: "\e64a";
+      font-family: 'themify';
+      position: absolute;
+      left: 1.5rem;
+      color: #c4c4c4;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-blockBtn--cancel:hover {
+      color: #fff;
+      background: #c4c4c4;
+      border: 2px solid #c4c4c4;
+    }
+
+    .ec-blockBtn--cancel:hover::after {
+      color: #fff;
+    }
+
+    .ec-cartTable .ec-blockBtn--action {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-cartTable .ec-blockBtn--action {
+        display: block;
+      }
+    }
+
+    /*END ec-blockBtn*/
+
+
+    /*.ec-orderForm*/
+    .ec-orderForm {
+      margin: 0 auto;
+      max-width: calc(1130px +(1rem* 2));
+      width: 100%;
+    }
+
+    .ec-rectHeading {
+      margin-bottom: 2rem;
+    }
+
+    .ec-rectHeading h2 {
+      background: #0dab65;
+      color: #fff;
+      border-radius: .5rem;
+    }
+
+    .shopping-tbl {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      width: 250px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .shopping-tbl {
+        display: block;
+      }
+
+      .shopping-tbl-ttl {
+        margin-bottom: 0.5rem;
+      }
+
+      .s-form-w20 {
+        width: calc(100% / 3) !important;
+      }
+    }
+
+    .shopping-formwrap {
+      width: calc(100% - 0px);
+    }
+
+    .ec-orderAccount dd {
+      margin-bottom: 0;
+    }
+
+    .shopping-formwrap ul {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .shopping-formwrap .s-form-add {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .s-form-w20 {
+      width: calc(100% / 5);
+    }
+
+    .s-form-w50 {
+      width: 50%;
+    }
+
+    .s-form-w100 {
+      width: 100%;
+    }
+
+    .ec-orderAccount__change {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+      float: inherit;
+    }
+
+    .ec-inlineBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background-color: #fff;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #525263;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #c4c4c4;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+    }
+
+    .ec-inlineBtn::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #c4c4c4;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-inlineBtn:hover {
+      color: #fff;
+      background: #c4c4c4;
+      border: 2px solid #c4c4c4;
+    }
+
+    .ec-inlineBtn:hover::after {
+      color: #fff;
+    }
+
+    .shopping-tbl label.form-check-label {
+      display: none !important;
+    }
+
+    /*END .ec-orderForm*/
+
+    /*ec-orderDelivery*/
+    .ec-orderDelivery {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .ec-orderDelivery .ec-rectHeading {
+      margin-bottom: 2rem;
+    }
+
+    .ec-orderDelivery .ec-rectHeading h2 {
+      background: #0dab65;
+      color: #fff;
+      border-radius: .5rem;
+    }
+
+    /*END ec-orderDelivery*/
+
+    /*.ec-orderDelivery__item*/
+    .ec-orderDelivery__item {
+      column-gap: 1rem;
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #fbfbfb;
+    }
+
+    .ec-orderDelivery__item .c-borderedList {
+      border-bottom: none;
+      padding: 0;
+      column-gap: 1rem;
+      display: flex;
+    }
+
+    .ec-orderDelivery__item .ec-cartRow__contentColumn {
+      width: 30%;
+      padding: 0;
+    }
+
+    .ec-orderDelivery__item .ec-cartRow__contentColumn img {
+      border-radius: 1.5rem;
+    }
+
+    .ec-orderDelivery__item .ec-cartRow__summary {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      margin-left: inherit;
+      vertical-align: middle;
+      width: 70%;
+      word-break: break-all;
+      row-gap: 0.5rem;
+    }
+
+    .ec-orderDelivery .shopping-tbl-in {
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+    }
+
+    .ec-orderDelivery .shopping-tbl {
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+    }
+
+    .ec-orderDelivery .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      word-break: keep-all;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-orderDelivery .shopping-tbl-in {
+        margin-top: 1rem;
+      }
+
+      .ec-orderDelivery .shopping-tbl {
+        display: block;
+      }
+
+      .ec-orderDelivery .shopping-tbl {
+        /*display: block;*/
+        justify-content: space-around;
+      }
+
+      .ec-orderDelivery .shopping-tbl-ttl {
+        margin-bottom: 0.5rem;
+        width: auto !important;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-orderDelivery__item .ec-cartRow__contentColumn {
+        width: 100%;
+        padding: 0;
+      }
+
+      .ec-orderDelivery__item {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+      }
+
+      .ec-orderDelivery__item .c-borderedList {
+        display: flex;
+        flex-flow: column;
+        width: 100%;
+      }
+
+      .eec-orderDelivery__item .ec-cartRow__img {
+        width: 100%;
+        padding: 0;
+      }
+
+      .ec-orderDelivery__item .ec-cartRow__summary {
+        padding: .5rem;
+        width: 100%;
+      }
+    }
+
+    .ec-orderDelivery .ec-orderDelivery__change {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+      float: inherit;
+      position: inherit;
+      right: inherit;
+    }
+
+    /*END .ec-cartRow*/
+
+    /*.ec-orderDetail*/
+    .ec-orderDetail {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .ec-orderDetail .ec-rectHeading {
+      margin-bottom: 2rem;
+    }
+
+    .ec-orderDetail .ec-rectHeading h2 {
+      background: #0dab65;
+      color: #fff;
+      border-radius: .5rem;
+    }
+
+    .ec-orderDetail .ec-orderRole__detail {
+      margin: 0 auto;
+      max-width: calc(1130px + (1rem * 2));
+      width: 100%;
+    }
+
+    .ec-orderDetail .shopping-wrap {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      row-gap: 3rem;
+    }
+
+    .ec-orderDetail .PT-txt {
+      font-size: calc(18px + 2 * ((100vw - 320px) / 670));
+      font-weight: bold;
+      color: #0dab65;
+    }
+
+    .ec-orderDetail .shopping-formwrap {
+      width: calc(100% - 0px);
+      display: flex;
+      align-items: center;
+    }
+
+    .ec-orderDetail .shopping-formwrap .selwrap {
+      position: relative;
+      width: calc(100% - 0px);
+    }
+
+    .ec-orderDetail .shopping-formwrap .selwrap::after {
+      content: "\e64b";
+      font-family: 'themify';
+      position: absolute;
+      right: 1.5rem;
+      color: #c4c4c4;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+      cursor: pointer;
+      pointer-events: none;
+    }
+
+    .ec-orderDetail .shopping-tbl {
+      display: flex;
+      align-items: center;
+    }
+
+    .ec-orderDetail .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-orderDetail .shopping-tbl {
+        display: block;
+      }
+
+      .ec-orderDetail .shopping-tbl-ttl {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .ec-orderDetail .ec-radio {
+      display: flex;
+      align-items: center;
+      /*
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      border-radius: 2.5rem;
+      background-color: #fff;
+      padding: 2rem;
+      color: #525263;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 1px solid #c4c4c4;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      margin: 0;
+      */
+    }
+
+    .ec-orderDetail .form-check .form-check-input:checked {
+      background-color: #0dab65;
+      border-color: #0dab65;
+    }
+
+    .ec-orderDetail .form-check {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .ec-orderDetail .form-check .form-check-input {
+      float: none;
+      margin-left: 0;
+    }
+
+    .ec-orderDetail .ec-radio input {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    .ec-orderDetail .ec-radio label {
+      margin-right: 0;
+      line-height: 0;
+    }
+
+    .ec-orderDetail .form-check input[type="radio"] {
+      height: 20px;
+      width: 20px;
+      margin-right: 1rem;
+    }
+
+    .ec-orderDetail .form-check .form-check-input {
+      margin-top: 0;
+    }
+
+    .ec-orderDetail .payment-attention {
+      width: 200px;
+      margin-left: 1rem;
+    }
+
+    .ec-orderDetail #shopping_order_DonationPurpose,
+    .ec-orderDetail #shopping_order_cheer_message,
+    .ec-orderDetail #shopping_order_offer_memo {
+      border: solid 1px #c4c4c4;
+      border-radius: 8px;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      font-family: 'Klee One', serif;
+      padding: 1rem;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .ec-orderDetail .ec-select select {
+      display: inline-block;
+      width: auto;
+      max-width: 100%;
+      background-color: #f8f8f8;
+      -webkit-appearance: menulist;
+    }
+
+    .ec-orderDetail .form-check input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+      margin-right: 1rem;
+      border: solid 1px #c4c4c4;
+    }
+
+    .ec-cartRole textarea {
+      font-family: initial;
+    }
+
+    /*END .ec-orderDetail*/
+
+    /*.ec-agreement*/
+    .ec-agreement {
+      width: 100%;
+      max-width: calc(1130px + (1rem * 2));
+      margin: 5rem auto;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      column-gap: 3rem;
+      border-top: 1px solid #ccc;
+      padding-top: 3rem;
+    }
+
+    .ec-agreement .shopping-formwrap {
+      width: calc(100% - 0px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ec-agreement .shopping-tbl {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+
+    .ec-agreement .shopping-tbl-ttl {
+      display: flex;
+      align-items: center;
+      width: 250px;
+      font-weight: bold;
+    }
+
+    @media screen and (max-width: 768px) {
+      .ec-agreement .shopping-tbl {
+        display: block;
+      }
+
+      .ec-agreement .shopping-tbl-ttl {
+        margin-bottom: 0.5rem;
+      }
+
+    }
+
+    .ec-agreement .form-check {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 0;
+    }
+
+    .ec-agreement .form-check .form-check-input {
+      float: none;
+      margin-left: 0;
+    }
+
+    .ec-agreement .form-check .form-check-input {
+      margin-top: 0;
+    }
+
+    .ec-agreement .form-check input[type="checkbox"] {
+      height: 20px;
+      width: 20px;
+      margin-right: 1rem;
+      border: solid 1px #c4c4c4;
+    }
+
+    .ec-agreement .agreement-link {
+      width: calc(100% - 0px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin: 3rem 0 1rem;
+    }
+
+    .ec-agreement .agreement-link .agreement-Btn:disabled {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 2.5rem;
+      background-color: #fff;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #e1e1e1;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #e1e1e1;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      position: relative;
+    }
+
+    .ec-agreement .agreement-link .agreement-Btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 2.5rem;
+      background: #0dab65;
+      width: 360px;
+      padding: 2rem;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      color: #fff;
+      font-weight: bold;
+      touch-action: manipulation;
+      cursor: pointer;
+      border: 2px solid #0dab65;
+      white-space: nowrap;
+      text-decoration: none;
+      height: 0;
+      line-height: 0;
+      transition: ease .2s;
+      /* Added */
+    }
+
+    .ec-agreement .agreement-link .agreement-Btn:disabled::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1rem;
+      color: #e1e1e1;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .ec-agreement .agreement-link .agreement-Btn::after {
+      content: "\e649";
+      font-family: 'themify';
+      position: absolute;
+      right: 1rem;
+      color: #fff;
+      font-size: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .3s;
+    }
+
+    .desc {
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+    }
+
+    .terms {
+      width: 100%;
+      height: 150px;
+      margin: 2rem 0;
+      padding: 0.5rem;
+      overflow-y: scroll;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+      border-radius: 8px;
+    }
+
+    /*END .ec-agreement*/
+  </style>
+  <div class="wrap">
+
+    <header>
+      <div class="container">
+        <nav>
+          <ul>
+            <li class="burger-btn">
+              <a>
+                <div><span></span><span></span><span></span></div>
+                <p>メニュー</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <a class="logo" href="./"><img src="./img/logo-misaki.png" loading="lazy" /></a>
+        <nav>
+          <ul>
+            <li style="margin-right: 1rem;">
+              <a href=""><span class="fi ti-search"></span>
+                <p>見つける</p>
+              </a>
+            </li>
+            <li>
+              <a href=""><span class="fi ti-shopping-cart"></span>
+                <p>カート<span class="cart_number">1</span></p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+
+      <div class="burger-menu">
+        <div class="inner">
+
+          <div class="burger-menu-btn">
+            <div class="btn-common"><a href="">会員登録 / ログイン</a></div>
+          </div>
+
+          <ul class="navi-1st">
+            <li><a href="{{ url('product_list') }}?orderby={{eccube_config.eccube_product_order_newer}}">美咲町の返礼品</a></li>
+            <li><a href="http://13.115.133.43/use">寄付の使い道</a></li>
+            <li><a href="http://13.115.133.43/jigyousha">事業者の紹介</a></li>
+            <li><a href="{{ url('news_index') }}">お知らせ</a></li>
+          </ul>
+
+          <ul class="navi-2nd">
+            <li><a href="/help/agreement">ご利用規約</a></li>
+            <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+            <li><a href="/help/privacy">個人情報保護方針</a></li>
+            <li><a href="/help/about">よくある質問</a></li>
+            <li><a href="/help/about">お問い合わせ</a></li>
+          </ul>
+          <!--
+        <div class="burger-menu-btn">
+          <div class="btn-common"><a href="">お問い合わせ</a></div>
+        </div>
+-->
+        </div>
+      </div>
+    </header>
+
+
+    <main id="about">
+      <div class="container">
+        <div class="ecv-Wrap">
+
+          <div class="ecv-header">
+            <div class="ec-pageHeader">
+              <h1>お申込手続き</h1>
+            </div>
+          </div>
+
+          <div class="ecv-contentsWrap">
+            <form name="form" id="form_cart" class="" method="post" action="https://mombetsu-stv.furusato-direct.jp/cart">
+
+              <div class="ec-cartTable">
+                <div class="ec-cartRole__progress">
+                  <ul class="ec-progress">
+                    <li class="ec-progress__item">
+                      <div class="ec-progress__number">1 </div>
+                      <div class="ec-progress__label">選択したお礼の品 </div>
+                    </li>
+                    <li class="ec-progress__item">
+                      <div class="ec-progress__number">2 </div>
+                      <div class="ec-progress__label">申込手続き </div>
+                    </li>
+                    <li class="ec-progress__item is-complete">
+                      <div class="ec-progress__number">3 </div>
+                      <div class="ec-progress__label">入力確認 </div>
+                    </li>
+                    <li class="ec-progress__item">
+                      <div class="ec-progress__number">4 </div>
+                      <div class="ec-progress__label">完了 </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+
+
+              <div class="ec-orderForm">
+                <div class="ec-rectHeading">
+                  <h2>お申込者</h2>
+                </div>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>お名前</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.name01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.name02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>お名前カナ</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.kana01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w50">
+                        <input class="" id="" type="text" value="{{ Order.kana02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl" style="display:none">
+                  <dt class="shopping-tbl-ttl">
+                    <label>会社名</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w100" id="" type="text" value="{{ Order.companyName }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>郵便番号</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.postal_code }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>都道府県</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.pref }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>住所</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <ul class="s-form-add">
+                      <li class="s-form-w100">
+                        <input class="" id="" type="text" value="{{ Order.addr01 }}" readonly="readonly">
+                      </li>
+                      <li class="s-form-w100">
+                        <input class="" id="" type="text" value="{{ Order.addr02 }}" readonly="readonly">
+                      </li>
+                    </ul>
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>電話番号</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.phone_number }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>生年月日</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w20" id="" type="text" value="{{ Order.birth|date('Y-m-d') }}" readonly="readonly">
+                  </dd>
+                </dl>
+
+                <dl class="shopping-tbl">
+                  <dt class="shopping-tbl-ttl">
+                    <label>メールアドレス</label>
+                  </dt>
+                  <dd class="shopping-formwrap">
+                    <input class="s-form-w100" id="" type="text" value="{{ Order.email }}" readonly="readonly">
+                  </dd>
+                </dl>
+              </div>
+
+
+              <div class="ec-orderDelivery">
+                <div class="ec-rectHeading">
+                  <h2>お礼の品とお届け先</h2>
+                </div>
+
+                <div class="ec-orderDelivery__item">
+                  <div class="c-borderedList">
+                    <div class="ec-cartRow__contentColumn">
+                      <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">
+                        <img src="./img/gift/misaki-product-01.jpg" alt="ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト">
+                      </a>
+                    </div>
+
+                    <div class="ec-cartRow__summary">
+                      <div class="ec-cartRow__name">
+                        <a target="_blank" href="https://misaki.furusato-direct.jp/products/add_cart/1719">ぶどう 2024年 先行予約 黒川農園 自慢 ! の 大粒 大房 シャイン マスカット 1房 700g以上 ブドウ 葡萄 岡山県産 国産 フルーツ 果物 ギフト</a> </div>
+
+
+                      <dl class="shopping-tbl-in">
+                        <dt class="shopping-tbl-ttl">
+                          <label>数量</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <span class="s-form-w20">2</span>
+                        </dd>
+
+                        <dt class="shopping-tbl-ttl">
+                          <label>配送方法</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <span class="s-form-w20">冷凍配送</span>
+                        </dd>
+
+                        <dt class="shopping-tbl-ttl">
+                          <label>小計</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <span class="s-form-w20">100,000,000円</span>
+                        </dd>
+                      </dl>
+
+                      <dl class="shopping-tbl">
+                        <dt class="shopping-tbl-ttl">
+                          <label>配送先</label>
+                        </dt>
+                        <dd class="shopping-formwrap">
+                          <span class="">〒106-0004</span> <span class="">東京都港区南麻布◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯◯</span> <span class="">4-11-21</span> <span class="">エムエルジェイ</span> <span class="">バンドウ <span class="">0357890445</span>
+                        </dd>
+                      </dl>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+
+
+              <div class="ec-orderDetail">
+                <div class="ec-rectHeading">
+                  <h2>寄付情報</h2>
+                </div>
+
+                <div class="shopping-wrap">
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>お支払い方法</label>
+                    </div>
+
+                    <div class="shopping-formwrap">
+                      <div class="ec-radio ec-paymethod">
+                        <div class="form-check">
+                          <label>クレジットカード決済</label>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>寄付金額</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <span class="PT-txt">100,000,000</span>
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>寄付金の使い道</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <div class="selwrap">
+                        アザラシの保護活動等のオホーツク海の海洋環境に関する事業
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl one_stop_head">
+                      <label>ワンストップ特例制度</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <span class="s-form-w100">希望しない</span>
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>応援メッセージ</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>メッセージを<br class="d-none d-md-inline" />サイトで公開</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <span class="s-form-w100">許可しない</span>
+                    </div>
+                  </div>
+
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>寄付者名の公表</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                      <span class="s-form-w100">承諾しない</span>
+                    </div>
+                  </div>
+
+                  <div class="shopping-tbl">
+                    <div class="shopping-tbl-ttl">
+                      <label>備考欄</label>
+                    </div>
+                    <div class="shopping-formwrap">
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="ec-agreement">
+
+                <div class="shopping-tbl">
+                  <div class="shopping-tbl-ttl">
+                    <label>注意事項</label>
+                  </div>
+
+                  <div class="shopping-formwrap">
+                    <div class="desc">
+                      以下の事項をご了承の上、お申込みください。
+                    </div>
+
+                    <div class="terms">
+                      ・お申し込みお手続きは、必ず控除対象者さまのご名義で行ってください。<br>
+                      ・寄附方法は、クレジットカード決済限定です。お申込者本人のクレジットカードのみご利用できます。<br>
+                      ・寄付の変更およびキャンセルは、いかなる理由でもお受けできません。<br>
+                      ・お礼の品、配送月の変更はお受けできません。<br>
+                      ・配送日、曜日、配送業者の指定はお受けできません。<br>
+                      ・配送業者での保管期間を過ぎた場合、再配送はいたしません。<br>
+                      ・農産物については、天候等の影響でご希望の配送月を前後する場合がございます。また、災害等によりお届け不能となった場合は、他のお礼品に変更をお願いする場合がございます。<br>
+                      ・お受け取りのお礼品につきましては、到着後直ぐに状態をご確認いただき、不具合のあった場合は早急にご連絡ください。<br>
+                      ・お日にちを経過してのご連絡は対応いたしかねます。<br>
+                      <div id="end"></div>
+                    </div>
+
+                    <div class="shopping-formwrap">
+                      <div class="form-check">
+                        <input type="checkbox" id="agree" disabled>
+                        <div class="s-form-w100">寄付の変更・キャンセルはいたしません</div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="agreement-link">
+                  <button id="next" type="button" class="agreement-Btn" data-trigger="click" data-path="{{url('help_agreement')}}" disabled>
+                    <span>決済へ進む</span>
+                  </button>
+                </div>
+
+                <a class="ec-blockBtn--cancel" href="/">戻る</a>
+
+                <script>
+                  var end = document.getElementById('end');
+                  var agree = document.getElementById('agree');
+                  var next = document.getElementById('next');
+                  agree.addEventListener('click', function () {
+                    next.disabled = !next.disabled;
+                  });
+                  var observer = new IntersectionObserver(function (changes) {
+                    if (changes[0].intersectionRatio === 1) {
+                      observer.disconnect();
+                      agree.disabled = false;
+                    }
+                  });
+                  observer.observe(end);
+                </script>
+
+              </div>
+
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+
+
+    <a class="totopfade" href="{{ url('homepage') }}"><img src="./img/totop.png" /></a>
+
+
+
+
+    <footer>
+      <div class="col-12 col-xl-6 mx-auto inner">
+        <ul class="subnav">
+          <li><a href="/help/agreement">ご利用規約</a></li>
+          <li><a href="/help/tradelaw">特定商取引法の表示</a></li>
+          <li><a href="/help/privacy">個人情報保護方針</a></li>
+          <li><a href="/help/about">よくある質問</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+        <a href="{{ url('homepage') }}">
+          <img src="./img/misaki.png" />
+          <p class="cr-txt">Copyright © Misaki Town All Rights Reserved.</p>
+        </a>
+      </div>
+
+    </footer>
+
+  </div>
+
+  <script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.sliderPro.min.js"></script>
+  <script type="text/javascript" src="./js/chart.min.js"></script>
+  <script type="text/javascript" src="./js/nouislider.min.js"></script>
+  <script type="text/javascript" src="./js/wNumb.js"></script>
+  <script type="text/javascript" src="./js/swiper-bundle.min.js"></script>
+  <script type="text/javascript" src="./js/slick.min.js"></script>
+  <script type="text/javascript" src="./js/common-kagamino.js"></script>
+</body>
+
+</html>
