@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url(../../assets/css/all.min.css);
 
 html,
 body,
@@ -314,13 +314,13 @@ body.is-preload *:after {
   font-family: 'BIZ UDGothic';
   font-style: normal;
   font-weight: 400;
-  src: url(../../assets/webfonts/BIZUDGothic-Regular.ttf);
+  src: url(../../assets/fonts/BIZUDGothic-Regular.ttf);
 }
 
 @font-face {
   font-family: 'BIZ UDGothic';
   font-weight: 700;
-  src: url(../../assets/webfonts/BIZUDGothic-Bold.ttf);
+  src: url(../../assets/fonts/BIZUDGothic-Bold.ttf);
 }
 
 body,
