@@ -3183,22 +3183,22 @@ fieldset:disabled .btn {
 }
 
 .btn-secondary {
-    color: #000;
+    color: #fff;
     background-color: #40ab41;
     border-color: #40ab41
 }
 
 .btn-secondary:hover {
-    color: #000;
-    background-color: #f1b098;
-    border-color: #f1ab92
+    color: #40ab41;
+    background-color: #fff;
+    border-color: #40ab41
 }
 
 .btn-check:focus+.btn-secondary,
 .btn-secondary:focus {
     color: #000;
-    background-color: #f1b098;
-    border-color: #f1ab92;
+    background-color: #fff;
+    border-color: #fff;
     box-shadow: 0 0 0 .25rem rgba(203, 138, 114, .5)
 }
 
@@ -3208,17 +3208,17 @@ fieldset:disabled .btn {
 .btn-secondary.active,
 .show>.btn-secondary.dropdown-toggle {
     color: #000;
-    background-color: #f2b59e;
-    border-color: #f1ab92
+    background-color: #fff;
+    border-color: #fff
 }
-
+/*
 .btn-check:checked+.btn-secondary:focus,
 .btn-check:active+.btn-secondary:focus,
 .btn-secondary:active:focus,
 .btn-secondary.active:focus,
 .show>.btn-secondary.dropdown-toggle:focus {
     box-shadow: 0 0 0 .25rem rgba(203, 138, 114, .5)
-}
+}*/
 
 .btn-secondary:disabled,
 .btn-secondary.disabled {

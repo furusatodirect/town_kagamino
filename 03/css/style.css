@@ -420,6 +420,14 @@ html {
   transition: 0.5s;
 }
 
+.icon-x-w svg {
+  cursor: pointer;
+  fill: #fff;
+}
+.icon-x-w svg:hover {
+  fill: #0095e1!important;
+}
+
 .news-nav-link {
   position: relative;
 }
@@ -985,6 +993,16 @@ html {
 */
 /*** Feature End ***/
 
+.stepwrap {
+  position: relative;
+  display: flex;
+  border: 1px solid #40ab41;
+  border-radius: 10px;
+  background: var(--bs-light);
+  transition: 0.5s;
+
+}
+
 
 /*** Appointment Start ***/
 .appointment {
@@ -1400,7 +1418,7 @@ html {
 }
 
 .swiper-wrapper {
-  gap: 10px;
+  gap: 25px;
 }
 
 .swiper-slide {
