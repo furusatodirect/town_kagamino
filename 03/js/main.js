@@ -76,35 +76,18 @@
 
   // Swiper .swiper-step
   new Swiper(".swiper-step", {
+    freeMode: true,
     scrollbar: {
       el: ".swiper-scrollbar",
       hide: true,
     },
     breakpoints: {
-      360: {
-        slidesPerView: 1.2,
+      768: {
+        slidesPerView: 1,
       },
-      820: {
-        slidesPerView: 1.2,
-      },
-      1020: {
+      769: {
         slidesPerView: 3,
       },
-      1440: {
-        slidesPerView: 3,
-      },
-    },
-  });
-
-  var swiper = new Swiper(".sw-header", {
-    effect: "flip",
-    grabCursor: true,
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
     },
   });
 })(jQuery);
