@@ -175,7 +175,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
   font-family: "BIZ UDGothic", sans-serif;
   font-size: clamp(1rem, 0.975rem + 0.12vw, 1.2rem);
   font-weight: 300;
@@ -228,6 +234,11 @@ a img:hover {
   opacity: 0.8;
   transition: 0.5s;
 }
+
+
+
+
+
 /***********************************************************************/
 
 .back-to-top {
@@ -468,6 +479,7 @@ a img:hover {
 }
 
 @media (max-width: 576px) {
+
   .topbar,
   .section-title .sub-style::before,
   .section-title .sub-style::after,
@@ -723,16 +735,14 @@ a img:hover {
 }
 
 @media (max-width: 576px) {
+
   .header-carousel .owl-nav .owl-prev,
   .header-carousel .owl-nav .owl-next {
     top: 630px;
     transition: 0.5s;
   }
 
-  .header-carousel
-    .header-carousel-item
-    .carousel-caption
-    .carousel-caption-content {
+  .header-carousel .header-carousel-item .carousel-caption .carousel-caption-content {
     width: 95% !important;
   }
 }
@@ -749,6 +759,7 @@ a img:hover {
 }
 
 @media (max-width: 992px) {
+
   .header-carousel .header-carousel-item,
   .header-carousel .header-carousel-item img {
     margin-top: 0;
@@ -757,6 +768,7 @@ a img:hover {
 }
 
 @media (min-width: 992px) {
+
   .header-carousel .owl-nav .owl-prev,
   .header-carousel .owl-nav .owl-next {
     margin-top: 50px;
@@ -776,10 +788,7 @@ a img:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.header-carousel
-  .header-carousel-item
-  .carousel-caption
-  .carousel-caption-content {
+.header-carousel .header-carousel-item .carousel-caption .carousel-caption-content {
   position: relative;
   width: 75%;
 }
@@ -994,6 +1003,51 @@ a img:hover {
   content: "";
 }
 
+.search-form-2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /*max-width: 300px;*/
+  width: 100%;
+  overflow: hidden;
+  border: 2px solid #0095e1;
+  border-radius: 25px;
+}
+
+.search-form-2 input {
+  flex: 1;
+  height: 45px;
+  padding: 5px 15px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 1em;
+  outline: none;
+}
+
+.search-form-2 input::placeholder {
+  color: #777777;
+}
+
+.search-form-2 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 45px;
+  border: none;
+  background-color: #0095e1;
+  cursor: pointer;
+}
+
+.search-form-2 button::after {
+  width: 24px;
+  height: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M18.031 16.6168L22.3137 20.8995L20.8995 22.3137L16.6168 18.031C15.0769 19.263 13.124 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2C15.968 2 20 6.032 20 11C20 13.124 19.263 15.0769 18.031 16.6168ZM16.0247 15.8748C17.2475 14.6146 18 12.8956 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18C12.8956 18 14.6146 17.2475 15.8748 16.0247L16.0247 15.8748Z' fill='%23fff'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  content: "";
+}
+
+
 /*** Feature Start ***/
 .feature .feature-item {
   position: relative;
@@ -1065,7 +1119,8 @@ a img:hover {
   }
 }
 
-@media screen and (max-width: 767px), (min-width: 993px) {
+@media screen and (max-width: 767px),
+(min-width: 993px) {
   .sp {
     display: none;
   }
@@ -1094,12 +1149,14 @@ a img:hover {
   .footer .footer-menu {
     flex-direction: column;
   }
+
   .footer .footer-menu .nav-link,
   .footer .footer-item .nav-link {
     position: inherit !important;
     padding: 10px 0 !important;
   }
 }
+
 .footer .footer-menu .nav-link,
 .footer .footer-item .nav-link {
   font-family: "BIZ UDGothic", sans-serif;
@@ -1152,15 +1209,18 @@ a img:hover {
 
 /*.sec-simulator----------------*/
 .collapse {
-  transition: height 0.5s ease;
+  transition: height 0.8s ease;
 }
 
-.card-howto-simulator {
+.card-howto-simulator,
+.card-deduction {
   transition: all 0.8s ease;
   opacity: 0;
 }
 
-.collapse.show .card-howto-simulator {
+.collapse.show .card-howto-simulator,
+.collapse.show .card-deduction {
+  transition: all 0.8s ease;
   opacity: 1;
 }
 
@@ -1376,4 +1436,32 @@ textarea {
   display: flex;
   align-items: center;
   position: relative;
+}
+
+
+#collapse-deduction .table {
+  font-size: clamp(0.8rem, 0.76rem + 0.2vw, 1rem)
+}
+
+#collapse-deduction .table tr {
+  border-top: 1px solid #C8C8C8;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+}
+
+#collapse-deduction .table th {
+  width: 25%;
+  padding: 1rem 0;
+}
+
+#collapse-deduction .table td {
+  width: 75%;
+  padding: 1rem 0;
+}
+
+@media (max-width: 769px) {
+  #collapse-deduction .table tr {
+    flex-direction: column;
+  }
 }

@@ -2003,8 +2003,7 @@ progress {
     --bs-table-hover-color: #8D8D8D;
     --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
     width: 100%;
-    margin-bottom: 1rem;
-    color: #8d8d8d;
+    color: #212529;
     vertical-align: top;
     border-color: #dee2e6
 }
@@ -3211,6 +3210,7 @@ fieldset:disabled .btn {
     background-color: #fff;
     border-color: #fff
 }
+
 /*
 .btn-check:checked+.btn-secondary:focus,
 .btn-check:active+.btn-secondary:focus,
@@ -3450,6 +3450,18 @@ fieldset:disabled .btn {
     color: #000;
     background-color: #faf9fb;
     border-color: #faf9fb
+}
+
+.btn-gray {
+    color: #fff;
+    background-color: #777;
+    border-color: #777;
+}
+
+.btn-gray:hover {
+    color: #777;
+    background-color: #fff;
+    border-color: #777
 }
 
 .btn-dark {

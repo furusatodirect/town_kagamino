@@ -612,13 +612,13 @@
       <div class="container py-3">
         <div class="search-wrap">
           <div class="col-12 col-md-8 col-lg-6">
-          <form action="#" class="search-form-1">
-            <label>
-              <input type="text" placeholder="キーワードを入力">
-            </label>
-            <button type="submit" aria-label="検索"></button>
-          </form>
-        </div>
+            <form action="#" class="search-form-1">
+              <label>
+                <input type="text" placeholder="キーワードを入力">
+              </label>
+              <button type="submit" aria-label="検索"></button>
+            </form>
+          </div>
         </div>
       </div>
 
@@ -980,7 +980,7 @@
                   <h5 class="mb-4 fw-bold">控除上限額を<br class="sp">確認する</h5>
                   <p class="mb-4">ふるさと納税の控除額は年収や家族構成によって変わります。自分の控除上限を確認しましょう。</p>
                 </div>
-                <a class="btn btn-secondary rounded-pill py-2 px-4 d-inline-block mx-auto" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">確認する</a>
+                <a class="btn btn-secondary rounded-pill py-2 px-4 d-inline-block mx-auto" data-bs-toggle="collapse" href="#collapse-simulator" role="button" aria-expanded="false" aria-controls="collapse-simulator">確認する</a>
               </div>
             </div>
             <i class="d-block d-md-none fas fa-caret-right px-2" style="font-size: 40px;color:#40ab41;"></i>
@@ -1014,7 +1014,7 @@
                   <h5 class="mb-4 fw-bold">控除手続き<br class="sp">をする</h5>
                   <p class="mb-4">税金控除には「ワンストップ特例制度」と「確定申告」があります。申請方法を確認しましょう。</p>
                 </div>
-                <a href="#" class="btn btn-secondary rounded-pill py-2 px-4 d-inline-block mx-auto">確認する</a>
+                <a class="btn btn-secondary rounded-pill py-2 px-4 d-inline-block mx-auto" data-bs-toggle="collapse" href="#collapse-deduction" role="button" aria-expanded="false" aria-controls="collapse-deduction">確認する</a>
               </div>
             </div>
           </div>
@@ -1023,7 +1023,7 @@
         <div class="swiper-scrollbar"></div>
       </div>
 
-      <div class="collapse" id="collapseExample">
+      <div class="collapse" id="collapse-simulator">
         <div class="row g-2 g-md-3 px-md-2 card-howto-simulator">
           <div class="col-12">
 
@@ -1133,7 +1133,115 @@
             </div>
 
           </div>
-          <a class="bt-close" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true" aria-controls="collapseExample"><i class="far fa-times-circle"></i> 閉じる</a>
+          <a class="btn btn-gray rounded-pill ms-3 mb-3 py-2 px-4 d-inline-block w-auto" data-bs-toggle="collapse" href="#collapse-simulator" role="button" aria-expanded="true" aria-controls="collapse-simulator"><i class="far fa-times-circle"></i> 閉じる</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="collapse" id="collapse-deduction">
+        <div class="row g-2 g-md-3 px-md-2 card-deduction">
+
+          <div class="col-12 col-md-6">
+            <div class="card">
+              <div class="card-header text-center mb-2 bg-secondary text-white fw-bold">
+                ワンストップ特例制度
+              </div>
+              <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title text-center fw-bold">
+                  <span class="text-danger">両方</span>に当てはまる方が対象です
+                </h5>
+                <div class="text-start">
+                  <p class="card-title fw-bold"><i class="fa fa-check text-danger me-2"></i>ふるさと納税で寄付したい自治体が5つ以下</p>
+                  <p class="card-title fw-bold"><i class="fa fa-check text-danger me-2"></i>ほかに確定申告する必要がない</p>
+                </div>
+                <p class="card-text text-center pt-3">
+                  ワンストップ申請書に住所や氏名を記入して<br class="d-none d-lg-inline" />必要書類とまとめて自治体に送るだけ！
+                </p>
+              </div>
+
+              <div class="table-responsive p-2 p-md-3">
+                <table class="table table-sm table-hover">
+                  <tbody>
+                    <tr>
+                      <th scope="row">寄付先の自治体数</th>
+                      <td>1年間で寄附先は5自治体まで<br>※5自治体までであれば、寄附は何度でも行うことが可能です</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">申請の方法</th>
+                      <td>寄附毎に、各自治体に申請書および本人証明書類を提出</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">税金控除の仕組み</th>
+                      <td>住民税から全額控除（減額）</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">申請・申告の期限</th>
+                      <td>寄附した翌年のX月X日必着</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">税金控除の時期</th>
+                      <td>ワンストップ特例制度利用の場合は、すべて住民税からの控除となります。寄附金控除の申請をした年の6月から翌年5月まで毎月控除されます。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+
+
+          <div class="col-12 col-md-6">
+            <div class="card">
+              <div class="card-header text-center mb-2 bg-secondary text-white fw-bold">
+                確定申告
+              </div>
+              <div class="card-body d-flex flex-column align-items-center">
+                <h5 class="card-title text-center fw-bold">
+                  <span class="text-danger">いずれか</span>に当てはまる方が対象です
+                </h5>
+                <div class="text-start">
+                  <p class="card-title fw-bold"><i class="fa fa-check text-danger me-2"></i>ふるさと納税で寄付したい自治体が6つ以上</p>
+                  <p class="card-title fw-bold"><i class="fa fa-check text-danger me-2"></i>ふるさと納税以外に確定申告する必要がある</p>
+                </div>
+                <p class="card-text text-center pt-3">
+                  どなたでも利用可能！<br class="d-none d-lg-inline" />一度でまとめて申請したい方向け！
+                </p>
+              </div>
+
+              <div class="table-responsive p-2 p-md-3">
+                <table class="table table-sm table-hover">
+                  <tbody>
+                    <tr>
+                      <th scope="row">寄付先の自治体数</th>
+                      <td>制限なし<br>好きな自治体に好きなだけ寄附ができます</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">申請の方法</th>
+                      <td>年に一度、税務署に寄附金受領証明書を確定申告書類と共に提出</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">税金控除の仕組み</th>
+                      <td>所得税からの還付と、住民税からの控除</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">申請・申告の期限</th>
+                      <td>寄附した翌年の3月15日</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">税金控除の時期</th>
+                      <td>確定申告の場合は、申告後およそ1～2ヵ月後に所得税の還付を受け、同年6月から翌年5月まで住民税から毎月控除されます。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -1184,24 +1292,24 @@
           </p>
         </div>
         <div class="col-lg-8 col-md-12 mb-md-0">
-        <div class="footer-menu d-flex">
-          <a href="#" class="nav-link">ご利用規約</a>
-          <a href="#" class="nav-link">特定商取引法の表示</a>
-          <a href="#" class="nav-link">個人情報保護方針</a>
-          <a href="#" class="nav-link">よくある質問</a>
-          <a href="#" class="nav-link">お問い合わせ</a>
-        </div>
+          <div class="footer-menu d-flex">
+            <a href="#" class="nav-link">ご利用規約</a>
+            <a href="#" class="nav-link">特定商取引法の表示</a>
+            <a href="#" class="nav-link">個人情報保護方針</a>
+            <a href="#" class="nav-link">よくある質問</a>
+            <a href="#" class="nav-link">お問い合わせ</a>
+          </div>
         </div>
       </div>
 
       <div class="col-md-6 col-lg-6 col-xl-3">
         <div class="footer-item d-flex">
-            <a href="https://www.instagram.com/kagaminogram/" target="_blank" class="btn-square btn btn-primary text-white rounded-circle me-2"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/mizurin.fairy/" target="_blank" class="btn-square btn btn-primary text-white rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/mizurin_fairy" target="_blank" class="btn-square btn btn-primary text-white rounded-circle me-2 icon-x-w"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
-                <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-              </svg></a>
-            <!--<a href="#" target="_blank" class="btn-square btn btn-primary text-white rounded-circle mx-1"><i class="far fa-question-circle"></i></a><a href="#" class="nav-link">お問い合わせ</a>-->
+          <a href="https://www.instagram.com/kagaminogram/" target="_blank" class="btn-square btn btn-primary text-white rounded-circle me-2"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/mizurin.fairy/" target="_blank" class="btn-square btn btn-primary text-white rounded-circle me-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com/mizurin_fairy" target="_blank" class="btn-square btn btn-primary text-white rounded-circle me-2 icon-x-w"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+              <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+            </svg></a>
+          <!--<a href="#" target="_blank" class="btn-square btn btn-primary text-white rounded-circle mx-1"><i class="far fa-question-circle"></i></a><a href="#" class="nav-link">お問い合わせ</a>-->
         </div>
       </div>
 
