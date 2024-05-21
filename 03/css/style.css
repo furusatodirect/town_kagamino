@@ -235,10 +235,6 @@ a img:hover {
   transition: 0.5s;
 }
 
-
-
-
-
 /***********************************************************************/
 
 .back-to-top {
@@ -479,7 +475,6 @@ a img:hover {
 }
 
 @media (max-width: 576px) {
-
   .topbar,
   .section-title .sub-style::before,
   .section-title .sub-style::after,
@@ -735,14 +730,16 @@ a img:hover {
 }
 
 @media (max-width: 576px) {
-
   .header-carousel .owl-nav .owl-prev,
   .header-carousel .owl-nav .owl-next {
     top: 630px;
     transition: 0.5s;
   }
 
-  .header-carousel .header-carousel-item .carousel-caption .carousel-caption-content {
+  .header-carousel
+    .header-carousel-item
+    .carousel-caption
+    .carousel-caption-content {
     width: 95% !important;
   }
 }
@@ -759,7 +756,6 @@ a img:hover {
 }
 
 @media (max-width: 992px) {
-
   .header-carousel .header-carousel-item,
   .header-carousel .header-carousel-item img {
     margin-top: 0;
@@ -768,7 +764,6 @@ a img:hover {
 }
 
 @media (min-width: 992px) {
-
   .header-carousel .owl-nav .owl-prev,
   .header-carousel .owl-nav .owl-next {
     margin-top: 50px;
@@ -788,7 +783,10 @@ a img:hover {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.header-carousel .header-carousel-item .carousel-caption .carousel-caption-content {
+.header-carousel
+  .header-carousel-item
+  .carousel-caption
+  .carousel-caption-content {
   position: relative;
   width: 75%;
 }
@@ -1047,7 +1045,6 @@ a img:hover {
   content: "";
 }
 
-
 /*** Feature Start ***/
 .feature .feature-item {
   position: relative;
@@ -1119,8 +1116,7 @@ a img:hover {
   }
 }
 
-@media screen and (max-width: 767px),
-(min-width: 993px) {
+@media screen and (max-width: 767px), (min-width: 993px) {
   .sp {
     display: none;
   }
@@ -1438,13 +1434,14 @@ textarea {
   position: relative;
 }
 
-
-#collapse-deduction .table {
-  font-size: clamp(0.8rem, 0.76rem + 0.2vw, 1rem)
+#collapse-deduction .table,
+#collapse-deductionEx .card-body p.card-text,
+#collapse-deductionKs .card-body p.card-text {
+  font-size: clamp(0.8rem, 0.76rem + 0.2vw, 1rem);
 }
 
 #collapse-deduction .table tr {
-  border-top: 1px solid #C8C8C8;
+  border-top: 1px solid #c8c8c8;
   text-align: left;
   display: flex;
   justify-content: space-between;
