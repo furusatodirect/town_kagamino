@@ -74,6 +74,21 @@
     return false;
   });
 
+  // PageLink
+  $(document).ready(function () {
+    $('a[href^="#"]').click(function () {
+      var adjust = $(".navbar").outerHeight(); // ナビゲーションバーの高さを取得
+      var speed = 400;
+      var href = $(this).attr("href");
+      var target = $(href == "#" || href == "" ? "html" : href);
+      if (target.length) {
+        var position = target.offset().top - adjust; // ナビゲーションバーの高さを引く
+        $("body,html").animate({ scrollTop: position }, speed, "swing");
+        return false;
+      }
+    });
+  });
+
   // Swiper .swiper-step
   new Swiper(".swiper-step", {
     freeMode: true,
