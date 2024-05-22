@@ -153,6 +153,7 @@ body {
   src: url(../fonts/BIZUDGothic-Bold.ttf);
 }
 
+
 /* box-sizing */
 html {
   box-sizing: border-box;
@@ -163,6 +164,7 @@ html {
 *:after {
   box-sizing: inherit;
 }
+
 
 /* Font and other styles */
 body,
@@ -690,7 +692,7 @@ a img:hover {
 
 @media (min-width: 992px) {
   .navbar-light {
-    position: absolute;
+    position: sticky;
     width: 100%;
     top: 0;
     left: 0;
@@ -796,7 +798,6 @@ a img:hover {
   position: relative;
   width: 100%;
   height: 1000px;
-  margin-top: 95px;
   display: block;
   object-fit: cover;
   transition: 0.5s;
@@ -1516,15 +1517,6 @@ textarea {
 
 /*.detail-pro-----------------*/
 
-.detail-pro {
-  margin-top: 100px;
-}
-
-@media (max-width: 769px) {
-  .detail-pro {
-    margin-top: 10px;
-  }
-}
 
 .area-pro {
   flex-direction: column !important;
