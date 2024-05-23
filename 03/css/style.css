@@ -89,7 +89,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
   vertical-align: baseline;
 }
 
@@ -185,7 +184,7 @@ h6,
 .h5,
 .h6 {
   font-family: "BIZ UDGothic", sans-serif;
-  font-size: clamp(1rem, 0.975rem + 0.12vw, 1.2rem);
+  /*font-size: clamp(1rem, 0.975rem + 0.12vw, 1.2rem);*/
   font-weight: 300;
   line-height: 1.5;
 }
@@ -859,7 +858,6 @@ a img:hover {
 
 /*** Service Start ***/
 .service .service-item {
-  /*box-shadow: 0 0 45px rgba(0, 0, 0, .2);*/
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
@@ -888,6 +886,7 @@ a img:hover {
   border-top-left-radius: 10px;
   transition: 0.5s;
   z-index: 5;
+  pointer-events: none;
 }
 
 .service .service-item:hover .service-img::before {
@@ -916,6 +915,14 @@ a img:hover {
   background: rgba(21, 185, 217, 0.5);
   transition: 0.5s;
   z-index: 3;
+  pointer-events: none;
+}
+
+.service a.btn {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  z-index: 15;
 }
 
 .service .service-item:hover .service-content::before {
@@ -925,6 +932,7 @@ a img:hover {
 
 .service .service-item .service-content .service-content-inner {
   transition: 0.5s;
+  z-index: 10;
 }
 
 .service .service-item:hover .service-content .service-content-inner {
@@ -1562,7 +1570,7 @@ textarea {
   overflow: hidden;
 }
 
-..pd_main .swiper-slide {
+.pd_main .swiper-slide {
   position: relative;
   width: 100%;
   height: auto;
