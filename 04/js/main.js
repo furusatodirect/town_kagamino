@@ -52,7 +52,7 @@
 
   // packages carousel
   $(".packages-carousel").owlCarousel({
-    autoplay: true,
+    autoplay: false,
     smartSpeed: 1000,
     center: false,
     dots: false,
