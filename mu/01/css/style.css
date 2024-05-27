@@ -283,7 +283,11 @@ a img:hover {
   background-color: #777777;
 }
 
-
+@media (max-width: 769px) {
+  .fixed-bottom {
+    position: initial;
+  }
+}
 
 /***********************************************************************/
 
