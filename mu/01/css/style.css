@@ -969,6 +969,8 @@ a img:hover {
   margin-bottom: 0;
   list-style: none;
   line-height: 60px;
+  align-items: center;
+  column-gap: .5rem;
 }
 
 .service .nav-item {
@@ -977,15 +979,53 @@ a img:hover {
 }
 
 .service .nav-item .nav-link:not(.active) {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid #0095e1;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  transition: all 0.3s ease 0s;
 }
 
 .service .nav-item .nav-link.active {
   font-size: 46px;
   font-weight: bold;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+  border-color: transparent;
 }
 
+#tab1-link .nav-link,
+#tab2-link .nav-link,
+#tab3-link .nav-link,
+#tab4-link .nav-link {
+  background: transparent;
+}
+
+#tab1-link .nav-link.active {
+  background: #40ab41 !important;
+  border-radius: 50%;
+}
+
+#tab2-link .nav-link.active {
+  background: #e59f09 !important;
+  border-radius: 50%;
+}
+
+#tab3-link .nav-link.active {
+  background: #dc3545 !important;
+  border-radius: 50%;
+}
+
+#tab4-link .nav-link.active {
+  background: #0095e1 !important;
+  border-radius: 50%;
+}
+
+
+/*
 .service #tab1-link {
   color: #40ab41;
 }
@@ -1001,6 +1041,7 @@ a img:hover {
 .service #tab4-link {
   color: #0095e1;
 }
+*/
 
 .service .nav-item .nav-link {
   display: inline-block;
@@ -1012,6 +1053,36 @@ a img:hover {
   text-decoration: none;
 }
 
+#jigyousya {
+  position: relative;
+  /* 子要素の絶対位置指定を可能にする */
+  background-image: url('../img/jihead.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#jigyousya::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.4));
+  z-index: 1;
+}
+
+#jigyousya .container {
+  position: relative;
+  z-index: 2;
+}
+
+/*
+#jigyousya .row {
+  row-gap: 0.25rem;
+}
+*/
 /*** Service End ***/
 
 .search-wrap {
