@@ -31,53 +31,57 @@
   </head>
 
   <body>
-    <!-- Topbar -->
-    <div id="Topbar" class="container-fluid d-none d-lg-block">
-      <div class="Topbar-inner row">
-        <div class="Topbar-news col-lg-7">
-          <a href="#" class="news-nav-link">
-            <i class="fas fa-info-circle"></i>
-            <span>お知らせ</span>
-            2024/08/01 新着返礼品がアップされました！
-          </a>
-        </div>
-        <div class="Topbar-nav-link col-lg-5">
-          <a href="#">
-            <small>
-              <i class="fa fa-user"></i>
-              会員登録
-            </small>
-          </a>
-          <a href="#">
-            <small>
-              <i class="fa fa-sign-in-alt"></i>
-              ログイン
-            </small>
-          </a>
-          <a href="#">
-            <small>
-              <i class="fa fa-home"></i>
-              マイページ
-            </small>
-          </a>
-          <div class="Topbar-nav-icon">
-            <a href="https://www.instagram.com/kagaminogram/" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/mizurin.fairy/" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/mizurin_fairy" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2">
-              <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
-                <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
-              </svg>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+      <div class="row gx-0 align-items-center" style="height: 45px">
+        <div class="col-lg-7 text-center text-lg-start mb-lg-0">
+          <div class="d-flex flex-wrap">
+            <a href="#" class="text-light news-nav-link me-4">
+              <i class="fas fa-info-circle text-primary me-2"></i>
+              <span class="text-primary">お知らせ</span>
+              2024/08/01 新着返礼品がアップされました！
             </a>
-            <a href="https://www.youtube.com/channel/UC7vvKJG7G4z7-ztOcDL1-qw" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-5 text-center text-lg-end">
+          <div class="d-inline-flex align-items-center" style="height: 45px">
+            <a href="#">
+              <small class="me-3 text-light">
+                <i class="fa fa-user me-2"></i>
+                会員登録
+              </small>
+            </a>
+            <a href="#">
+              <small class="me-3 text-light">
+                <i class="fa fa-sign-in-alt me-2"></i>
+                ログイン
+              </small>
+            </a>
+            <a href="#">
+              <small class="me-3 text-light">
+                <i class="fa fa-home me-2"></i>
+                マイページ
+              </small>
+            </a>
+            <div class="d-flex align-items-center justify-content-end">
+              <a href="https://www.instagram.com/kagaminogram/" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/mizurin.fairy/" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://twitter.com/mizurin_fairy" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2">
+                <svg class="icon-x" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+                  <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
+                </svg>
+              </a>
+              <a href="https://www.youtube.com/channel/UC7vvKJG7G4z7-ztOcDL1-qw" target="_blank" class="btn btn-light btn-square border rounded-circle nav-fill me-2"><i class="fab fa-youtube"></i></a>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <!-- Topbar End -->
 
-    <!-- NavbarHead -->
-    <div id="NavbarHead" class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light px-2 px-lg-5 py-2 py-lg-0">
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white px-2 px-lg-5 py-2 py-lg-0">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="fa fa-bars"></span>
         </button>
@@ -88,8 +92,8 @@
         </a>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav ms-auto py-0">
-            <a href="#localgourmet" class="nav-item nav-link">特産・グルメ</a>
-            <a href="#keyspot" class="nav-item nav-link">主要施設・スポット</a>
+            <a href="#gourmet" class="nav-item nav-link">グルメ</a>
+            <a href="#spots" class="nav-item nav-link">観光スポット</a>
             <a href="#event" class="nav-item nav-link">イベント</a>
             <a href="#products" class="nav-item nav-link">新着返礼品</a>
             <a href="#use" class="nav-item nav-link">寄付の使い道</a>
@@ -145,14 +149,14 @@
               <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px">Introduction to Kagino Town</h5>
               <h1 class="display-1 text-capitalize text-white mb-4">鏡野町とは？</h1>
               <p class="mb-5 fs-5 animated slideInDown">美しい森からの恩恵を受ける鏡野町は、鏡野、奥津、上齋原、富の4つのエリアで構成されています。</p>
-              <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="https://www.kagamino.holiday/charm/" target="_blank">詳細</a>
+              <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="https://www.kagamino.holiday/charm/" target="_blank">詳細 <i class="fas fa-external-link-alt"></i></a>
             </div>
           </div>
         </div>
       </div>
       <!-- Carousel End -->
     </div>
-    <!-- NavbarHead End -->
+    <!-- Navbar & Hero End -->
 
     <!-- News Start -->
     <div class="container-fluid bg-light py-3 py-sm-5 mb-5">
@@ -190,77 +194,81 @@
     <!-- About End -->
 
     <!-- Services Start -->
-    <div id="localgourmet" class="container-fluid service py-3 py-sm-5 fadeInUp" data-wow-delay="0.1s">
+    <div id="gourmet" class="container-fluid service py-3 py-sm-5 fadeInUp" data-wow-delay="0.1s">
       <div class="container p-0">
         <div class="section-title mb-3">
           <div class="sub-style mb-3">
-            <h4 class="display-5 sub-title px-3 mb-0">特産・グルメ</h4>
+            <h4 class="display-5 sub-title px-3 mb-0">グルメ・おみやげ・観光物産</h4>
           </div>
           <p class="mb-0">鏡野町の特産品は、季節の変化とともに多彩な色彩を見せ、その味わいは四季折々の恵みを感じさせます。</p>
         </div>
         <div class="row g-1 g-sm-4 justify-content-center">
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.1s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-2.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/004/201704/8e77ee7fb8b2f0fc83527bcd1514cda9.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">山田養蜂場</h5>
-                  <p class="mb-4">高品質なはちみつを使用した化粧品や美味しさと健康を融合させた多彩な商品をご紹介します。</p>
+                  <span class="mb-2 badge rounded-pill bg-primary">グルメ</span>
+                  <h5 class="mb-4 fw-bold">うたたねの里 いっぷく亭【4月19日オープン】</h5>
+                  <p class="mb-4">茅葺屋根と囲炉裏が懐かしい。流れる時間さえも味わい深い農村レストランで田舎を頬張って！</p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/gourmet/entry-180.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.3s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-3.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/004/202204/cc12b27c26ecc03bb1eafa09c7ba006e.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">瀬戸ジャイアンツ</h5>
-                  <p class="mb-4">「瀬戸ジャイアンツ」ぶどうは、甘くてジューシーな果実で、地元の自然と農業の誇りを象徴しています。</p>
+                  <span class="mb-2 badge rounded-pill bg-primary">観光物産</span>
+                  <h5 class="mb-4 fw-bold">道の駅 奥津温泉</h5>
+                  <p class="mb-4"></p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/gourmet/entry-313.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.5s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-1.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/004/202002/1c0b460b4cd28cc3cca0a443715d84b8.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">鏡野町産コシヒカリ</h5>
-                  <p class="mb-4">鏡野町産コシヒカリは、豊かな自然と丹精込められた栽培技術が生み出す、上質なお米です。</p>
+                  <span class="mb-2 badge rounded-pill bg-primary">観光物産</span>
+                  <h5 class="mb-4 fw-bold">奥津湖総合案内所「みずの郷奥津湖」</h5>
+                  <p class="mb-4"></p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/gourmet/%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3/entry-312.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.7s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-4.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/004/202105/343a18377152b647cdb5820501bc402f.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">ひらめ（あまご）</h5>
-                  <p class="mb-4">ひらめ（あまご）は、豊かな清流で育まれた新鮮な味わいと、独特のふるさとの風土が調和した逸品です。</p>
+                  <span class="mb-2 badge rounded-pill bg-primary">グルメ</span>
+                  <h5 class="mb-4 fw-bold">山田養蜂場 お菓子工房ぶんぶんファクトリー</h5>
+                  <p class="mb-4"></p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/gourmet/entry-294.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
           <div class="col-12 text-center fadeInUp" data-wow-delay="1s">
-            <a class="btn btn-primary rounded-pill text-white px-5" href="contents.html#localgourmet">MORE</a>
+            <a class="btn btn-primary rounded-pill text-white px-5" href="gourmet.html">MORE</a>
           </div>
         </div>
       </div>
@@ -269,77 +277,77 @@
     <!-- Services End -->
 
     <!-- Services Start -->
-    <div id="keyspot" class="container-fluid service py-3 py-sm-5 fadeInUp" data-wow-delay="0.1s">
+    <div id="spots" class="container-fluid service py-3 py-sm-5 fadeInUp" data-wow-delay="0.1s">
       <div class="container p-0">
         <div class="section-title mb-3">
           <div class="sub-style mb-3">
-            <h4 class="display-5 sub-title px-3 mb-0">主要施設・スポット</h4>
+            <h4 class="display-5 sub-title px-3 mb-0">観光スポット</h4>
           </div>
           <p class="mb-0">四季折々の美しい風景と魅力的なスポットで人々を魅了する場所をご案内いたします。</p>
         </div>
         <div class="row g-1 g-sm-4 justify-content-center">
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.1s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-5.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/005/202304/88fceac9e284e3ad70e4692aba5d185c.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">岩井滝</h5>
-                  <p class="mb-4">静かな自然が織りなす美しい景色。心を癒す滝壺で贅沢なひとときを。</p>
+                  <h5 class="mb-4 fw-bold">高清水トレイル【復旧工事のため2024年6月下旬～全線立入禁止】</h5>
+                  <p class="mb-4">中国山地の山並みを気軽にトレッキング♪見晴らし抜群のトレイルが誕生☆</p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/spot/entry-441.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.3s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-7.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/005/201703/094c19bc18d73a1370fadec1fe565918.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">奥津湖・苫田ダム</h5>
-                  <p class="mb-4">静かな湖面と堂々たるダムが見事なコントラストを描く。</p>
+                  <h5 class="mb-4 fw-bold">岩井滝【立入禁止】</h5>
+                  <p class="mb-4">滝の裏側から流水を楽しむ“裏見の滝”と日本名水百選の子宝の水</p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/spot/entry-110.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.5s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-6.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/005/202309/05e4b9ed97ca0c24076dfaa385b8efe5.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">高清水トレイル</h5>
-                  <p class="mb-4">自然の息吹を感じながら心地よいハイキングを楽しもう。</p>
+                  <h5 class="mb-4 fw-bold">奥津湖 湖畔広場「奥津湖パドリングフィールド」</h5>
+                  <p class="mb-4">自然アクティビティの拠点スポット☆</p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/spot/entry-661.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
-          <div class="col-6 col-md-6 col-lg-3 fadeInUp" data-wow-delay="0.7s">
+          <div class="col-6 col-md-6 col-lg-3">
             <div class="card service-item rounded d-flex flex-column h-100">
               <div class="service-img rounded-top">
-                <img src="img/service-8.jpg" class="img-fluid rounded-top w-100" alt="" />
+                <img src="https://www.kagamino.holiday/archives/005/202207/35cf6af40fecf188b6ef47608e23f13a.jpg" class="img-fluid rounded-top w-100" alt="" />
               </div>
               <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                 <div class="service-content-inner mb-4">
-                  <h5 class="mb-4 fw-bold">名勝 奥津渓</h5>
-                  <p class="mb-4">自然の宝庫、緑豊かな谷と美しい紅葉の饗宴</p>
+                  <h5 class="mb-4 fw-bold">山田養蜂場 みつばち農園</h5>
+                  <p class="mb-4">養蜂・採蜜体験、化学農薬不使用のイチゴ摘み取り体験など、山田養蜂場唯一の直営体験農園♪</p>
                 </div>
-                <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                <a href="https://www.kagamino.holiday/spot/entry-216.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
               </div>
             </div>
           </div>
 
           <div class="col-12 text-center fadeInUp" data-wow-delay="1s">
-            <a class="btn btn-primary rounded-pill text-white px-5" href="contents.html#keyspot">MORE</a>
+            <a class="btn btn-primary rounded-pill text-white px-5" href="spots.html">MORE</a>
           </div>
         </div>
       </div>
@@ -371,104 +379,35 @@
         </ul>
 
         <div class="tab-content fadeInUp" data-wow-delay="0.1s" id="myTabContent">
-          <div id="tab1" class="tab-pane fade show active" role="tabpanel">
+          <div id="tab1" class="tab-pane fade" role="tabpanel">
             <div class="container py-0 py-sm-3 g-0">
               <div class="row g-1 g-sm-4 justify-content-start">
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event1-1.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">春イベント1</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event1-2.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">春イベント2</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event1-3.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">春イベント3</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
+                <div class="col-12 mx-auto">
+                  <h4 class="m-4 text-center">情報が入り次第掲載いたします</h4>
                 </div>
               </div>
             </div>
             <img src="img/head_tab1.jpg" class="img-fluid rounded w-100" alt="Image" />
           </div>
 
-          <div id="tab2" class="tab-pane fade" role="tabpanel">
+          <div id="tab2" class="tab-pane fade show active" role="tabpanel">
             <div class="container py-0 py-sm-3 g-0">
               <div class="row g-1 g-sm-4 justify-content-start">
                 <div class="col-6 col-md-6 col-lg-4">
                   <div class="card service-item rounded d-flex flex-column h-100">
                     <div class="service-img rounded-top">
-                      <img src="img/event2-1.jpg" class="img-fluid rounded-top w-100" alt="" />
+                      <img src="https://www.kagamino.holiday/archives/006/202404/720f8d39861a50faff3abea732043fe4.jpg" class="img-fluid rounded-top w-100" alt="" />
                     </div>
                     <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                       <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">夏イベント1</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
+                        <h5 class="mb-4 fw-bold">鏡野山開き</h5>
+                        <p class="mb-4">高清水トレイル　赤和瀬駐車場</p>
                         <p class="text-secondary">
                           <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
+                          2024年4月06日（土）神事9:30 山歩き10:00～13:00
                         </p>
                       </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                      <a href="https://www.kagamino.holiday/event/siteseeing/entry-877.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
                     </div>
                   </div>
                 </div>
@@ -476,22 +415,18 @@
                 <div class="col-6 col-md-6 col-lg-4">
                   <div class="card service-item rounded d-flex flex-column h-100">
                     <div class="service-img rounded-top">
-                      <img src="img/event2-2.jpg" class="img-fluid rounded-top w-100" alt="" />
+                      <img src="https://www.kagamino.holiday/archives/006/202302/27390f05ac28d9f8b7c1695772b2b210.jpg" class="img-fluid rounded-top w-100" alt="" />
                     </div>
                     <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                       <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">夏イベント2</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
+                        <h5 class="mb-4 fw-bold">奥津温泉ファミリーあまご釣り大会</h5>
+                        <p class="mb-4">奥津温泉ファミリーあまご釣り大会</p>
                         <p class="text-secondary">
                           <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
+                          2024年4月14日（日）08:00～14:00
                         </p>
                       </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                      <a href="https://www.kagamino.holiday/event/siteseeing/entry-786.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
                     </div>
                   </div>
                 </div>
@@ -499,22 +434,75 @@
                 <div class="col-6 col-md-6 col-lg-4">
                   <div class="card service-item rounded d-flex flex-column h-100">
                     <div class="service-img rounded-top">
-                      <img src="img/event2-3.jpg" class="img-fluid rounded-top w-100" alt="" />
+                      <img src="https://www.kagamino.holiday/archives/006/201804/7f2538efe45f08e66b00b5d2648d1c92.jpg" class="img-fluid rounded-top w-100" alt="" />
                     </div>
                     <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
                       <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">夏イベント3</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
+                        <h5 class="mb-4 fw-bold">上齋原神社奉納 おんな相撲大会</h5>
+                        <p class="mb-4">女性限定！土俵で繰り広げられる熱き一番を見逃すな！</p>
                         <p class="text-secondary">
                           <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
+                          2024年5月03日（金）12:00～16:00
                         </p>
                       </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
+                      <a href="https://www.kagamino.holiday/event/siteseeing/entry-795.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-4">
+                  <div class="card service-item rounded d-flex flex-column h-100">
+                    <div class="service-img rounded-top">
+                      <img src="https://www.kagamino.holiday/archives/006/202003/714b3f419b25dcb48284ed78018f7dc6.jpg" class="img-fluid rounded-top w-100" alt="" />
+                    </div>
+                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                      <div class="service-content-inner mb-4">
+                        <h5 class="mb-4 fw-bold">夢広場 春の味覚祭</h5>
+                        <p class="mb-4">春野菜からご当地グルメまで、春の鏡野の味覚が勢ぞろい☆</p>
+                        <p class="text-secondary">
+                          <i class="text-primary far fa-calendar-check"></i>
+                          2024年5月03日（金）10:00～15:00
+                        </p>
+                      </div>
+                      <a href="https://www.kagamino.holiday/event/siteseeing/entry-100.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-4">
+                  <div class="card service-item rounded d-flex flex-column h-100">
+                    <div class="service-img rounded-top">
+                      <img src="https://www.kagamino.holiday/archives/006/202304/162e9b78ef6ff8f24ffd4b164fa99eff.jpg" class="img-fluid rounded-top w-100" alt="" />
+                    </div>
+                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                      <div class="service-content-inner mb-4">
+                        <h5 class="mb-4 fw-bold">布施神社 お田植祭</h5>
+                        <p class="mb-4">五穀豊穣を祈る、岡山県重要無形文化財の伝統ある貴重な行事。</p>
+                        <p class="text-secondary">
+                          <i class="text-primary far fa-calendar-check"></i>
+                          2024年5月05日（日）13:30～14:30
+                        </p>
+                      </div>
+                      <a href="https://www.kagamino.holiday/event/siteseeing/entry-798.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-6 col-lg-4">
+                  <div class="card service-item rounded d-flex flex-column h-100">
+                    <div class="service-img rounded-top">
+                      <img src="https://www.kagamino.holiday/archives/006/202405/673eaf6c13d65223e02f66c2b6c34e15.png" class="img-fluid rounded-top w-100" alt="" />
+                    </div>
+                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                      <div class="service-content-inner mb-4">
+                        <h5 class="mb-4 fw-bold">恩原キスゲ「オープンガーデン2024」</h5>
+                        <p class="mb-4">中国地方最大級のキスゲ約18,000株が咲き誇る！限定メニューの販売のほか週末にはE-MTBレンタルや新緑ウォークも♪</p>
+                        <p class="text-secondary">
+                          <i class="text-primary far fa-calendar-check"></i>
+                          2024年6月02日（日）～6月23日（日）10:00～16:00
+                        </p>
+                      </div>
+                      <a href="https://www.kagamino.holiday/event/siteseeing/entry-811.html" target="_blink" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細 <i class="fas fa-external-link-alt"></i></a>
                     </div>
                   </div>
                 </div>
@@ -526,73 +514,8 @@
           <div id="tab3" class="tab-pane fade" role="tabpanel">
             <div class="container py-0 py-sm-3 g-0">
               <div class="row g-1 g-sm-4 justify-content-start">
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event3-1.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">秋イベント1</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event3-2.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">秋イベント2</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event3-3.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">秋イベント3</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
+                <div class="col-12 mx-auto">
+                  <h4 class="m-4 text-center">情報が入り次第掲載いたします</h4>
                 </div>
               </div>
             </div>
@@ -602,73 +525,8 @@
           <div id="tab4" class="tab-pane fade" role="tabpanel">
             <div class="container py-0 py-sm-3 g-0">
               <div class="row g-1 g-sm-4 justify-content-start">
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event4-1.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">冬イベント1</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event4-2.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">冬イベント2</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-6 col-md-6 col-lg-4">
-                  <div class="card service-item rounded d-flex flex-column h-100">
-                    <div class="service-img rounded-top">
-                      <img src="img/event4-3.jpg" class="img-fluid rounded-top w-100" alt="" />
-                    </div>
-                    <div class="service-content rounded-bottom p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                      <div class="service-content-inner mb-4">
-                        <h5 class="mb-4 fw-bold">冬イベント3</h5>
-                        <p class="mb-4">テキストテキストテキストテキストテキストテキスト</p>
-                        <p class="text-secondary">
-                          <i class="text-primary far fa-calendar-check"></i>
-                          ◯◯月◯◯日～◯◯月◯◯日
-                        </p>
-                        <p class="text-secondary">
-                          <i class="text-primary fas fa-map-marker-alt"></i>
-                          場所テキスト
-                        </p>
-                      </div>
-                      <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 d-inline-block mx-auto">詳細</a>
-                    </div>
-                  </div>
+                <div class="col-12 mx-auto">
+                  <h4 class="m-4 text-center">情報が入り次第掲載いたします</h4>
                 </div>
               </div>
             </div>
