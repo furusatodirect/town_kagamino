@@ -964,6 +964,57 @@ a img:hover {
   color: var(--bs-secondary);
 }
 
+/* .status-wrapがある.service-itemのホバー動作を無効にする */
+.service .service-item .status-wrap:hover {
+  cursor: default;
+}
+
+.service .service-item .status-wrap~.service-img img,
+.service .service-item .status-wrap~.service-img::before,
+.service .service-item .status-wrap~.service-content::before {
+  transition: none;
+  transform: none;
+  background: none;
+}
+
+.service .service-item:hover .status-wrap~.service-img::before {
+  height: 0;
+  background: none;
+}
+
+.service .service-item:hover .status-wrap~.service-img img {
+  transform: none;
+}
+
+.service .service-item:hover .status-wrap~.service-content::before {
+  background: none;
+}
+
+.service .service-item:hover .status-wrap~.service-content .service-content-inner {
+  color: inherit !important;
+}
+
+/* 追加の安全策として */
+.service-item .status-wrap+.service-img::before {
+  height: auto !important;
+  background: none !important;
+}
+
+.service-item .status-wrap+.service-img:hover img {
+  transform: none !important;
+}
+
+.service-item .status-wrap:hover .service-content .service-content-inner {
+  position: static !important;
+  color: inherit !important;
+  z-index: auto !important;
+}
+
+.service-item .status-wrap+.service-content .service-content-inner {
+  color: inherit !important;
+}
+
+
 .service .nav {
   display: flex;
   flex-wrap: wrap;

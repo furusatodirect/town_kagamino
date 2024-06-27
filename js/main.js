@@ -1,45 +1,42 @@
 (function ($) {
   "use strict";
 
-  // Spinner
-  var spinner = function () {
-    setTimeout(function () {
-      if ($("#spinner").length > 0) {
-        $("#spinner").removeClass("show");
-      }
-    }, 1);
-  };
-  spinner();
-
-  // Initiate the wowjs
-  new WOW().init();
-
-  // Sticky Navbar
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 45) {
-      $(".navbar").addClass("sticky-top shadow-sm");
-    } else {
-      $(".navbar").removeClass("sticky-top shadow-sm");
-    }
-  });
-
-  // Hero Header carousel
-  $(".header-carousel").owlCarousel({
-    //animateOut: "slideOutDown",
-    items: 1,
-    autoplay: false,
-    loop: true,
-    slideSpeed: 1000,
-    smartSpeed: 1000,
-    mouseDrag: true,
-    touchDrag: true,
-    dots: true,
-    nav: true,
-    navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
-  });
-
-  // Modal Video
   $(document).ready(function () {
+    // Spinner
+    var spinner = function () {
+      setTimeout(function () {
+        if ($("#spinner").length > 0) {
+          $("#spinner").removeClass("show");
+        }
+      }, 1);
+    };
+    spinner();
+
+    // Sticky Navbar
+    $(window).scroll(function () {
+      var $navbar = $(".navbar");
+      if ($(this).scrollTop() > 45) {
+        $navbar.addClass("sticky-top shadow-sm");
+      } else {
+        $navbar.removeClass("sticky-top shadow-sm");
+      }
+    });
+
+    // Hero Header carousel
+    $(".header-carousel").owlCarousel({
+      items: 1,
+      autoplay: false,
+      loop: true,
+      slideSpeed: 1000,
+      smartSpeed: 1000,
+      mouseDrag: true,
+      touchDrag: true,
+      dots: true,
+      nav: true,
+      navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
+    });
+
+    // Modal Video
     var $videoSrc;
     $(".btn-play").click(function () {
       $videoSrc = $(this).data("src");
@@ -53,76 +50,110 @@
     $("#videoModal").on("hide.bs.modal", function (e) {
       $("#video").attr("src", "");
     });
-  });
 
-  // Back to top button
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-      $(".back-to-top").fadeIn("slow");
-    } else {
-      $(".back-to-top").fadeOut("slow");
-    }
-  });
-  $(".back-to-top").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
-    return false;
-  });
+    // Back to top button
+    $(window).scroll(function () {
+      var $backToTop = $(".back-to-top");
+      if ($(this).scrollTop() > 300) {
+        $backToTop.fadeIn("slow");
+      } else {
+        $backToTop.fadeOut("slow");
+      }
+    });
 
-  // PageLink
-  $(document).ready(function () {
+    // ボタンをクリックした時の処理
+    $(".back-to-top").click(function (e) {
+      e.preventDefault(); // リンクのデフォルトの動作を無効化する
+      $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
+    });
+
+    // PageLink
     $('a[href^="#"]').click(function () {
-      var adjust = $(".navbar").outerHeight(); // ナビゲーションバーの高さを取得
+      var adjust = $(".navbar").outerHeight();
       var speed = 400;
       var href = $(this).attr("href");
-      var target = $(href == "#" || href == "" ? "html" : href);
+      var target = $(href === "#" || href === "" ? "html" : href);
       if (target.length) {
-        var position = target.offset().top - adjust; // ナビゲーションバーの高さを引く
+        var position = target.offset().top - adjust;
         $("body,html").animate({ scrollTop: position }, speed, "swing");
         return false;
       }
     });
-  });
 
-  // Swiper .swiper-step
-  new Swiper(".swiper-step", {
-    freeMode: true,
-    scrollbar: {
-      el: ".swiper-scrollbar",
-      hide: true,
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 1,
+    // Swiper .swiper-step
+    new Swiper(".swiper-step", {
+      freeMode: true,
+      scrollbar: {
+        el: ".swiper-scrollbar",
+        hide: true,
       },
-      769: {
-        slidesPerView: 3,
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+        },
+        769: {
+          slidesPerView: 3,
+        },
       },
-    },
-  });
+    });
 
-  /**
-   * swiper product detail
-   */
-  const mySwiper_pd_thumb = new Swiper(".pd_thumb", {
-    /*slidesPerView: 5,*/
-    slidesPerView: document.querySelectorAll(".pd_thumb .swiper-slide").length > 5 ? 5.5 : 5, //5枚以上の場合は初期値5→5.5枚表示
-    spaceBetween: 6,
-    grabCursor: true,
-  });
+    /**
+     * swiper product detail
+     */
+    const mySwiperPdThumb = new Swiper(".pd_thumb", {
+      slidesPerView: document.querySelectorAll(".pd_thumb .swiper-slide").length > 5 ? 5.5 : 5,
+      spaceBetween: 6,
+      grabCursor: true,
+    });
 
-  const mySwiper_pd_main = new Swiper(".pd_main", {
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-    speed: 600,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: mySwiper_pd_thumb,
-    },
+    const mySwiperPdMain = new Swiper(".pd_main", {
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 600,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: mySwiperPdThumb,
+      },
+    });
+
+    // SNSリンク
+    function toggleBalloon() {
+      $("#share-list").toggleClass("balloon balloon1");
+    }
+
+    $("#share-list a").click(function () {
+      toggleBalloon();
+    });
+
+    // アコーディオン
+    $(".ac-open").hide();
+    $(".ac-btn").on("click", function () {
+      var $openSection = $(this).prev(".ac-open");
+      $openSection.slideToggle("slow", "swing");
+      $(this).toggleClass("active");
+      var buttonText = $(this).text().trim();
+      $(this).text(buttonText === "もっと見る" ? "閉じる" : "もっと見る");
+    });
+
+    // Cart addition
+    $(".addition").hide();
+    $(".go-cart").click(function () {
+      $(this).parent("div").prev(".addition").fadeIn();
+    });
+
+    // ポップアップ
+    $("#popupbtns, #popupbtnf").click(function () {
+      $("#js-popup").show();
+    });
+
+    $("#popup-close, #popup-bg").click(function () {
+      $("#js-popup").hide();
+    });
   });
 })(jQuery);
 
