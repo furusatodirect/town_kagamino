@@ -143,13 +143,13 @@ body {
   font-family: "BIZ UDGothic";
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/BIZUDGothic-Regular.ttf);
+  src: url(../font/BIZUDGothic-Regular.ttf);
 }
 
 @font-face {
   font-family: "BIZ UDGothic";
   font-weight: 700;
-  src: url(../fonts/BIZUDGothic-Bold.ttf);
+  src: url(../font/BIZUDGothic-Bold.ttf);
 }
 
 
@@ -867,8 +867,9 @@ a img:hover {
 
 /*** Service Start ***/
 #products .service-item.card {
-    border: none;
+  border: none;
 }
+
 .service .service-item {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
@@ -968,7 +969,7 @@ a img:hover {
 }
 
 /* .status-wrapを.cardの上に重ねるCSS */
-.service .col-15 .status-wrap{
+.service .col-15 .status-wrap {
   position: relative;
   padding: 0;
 }
