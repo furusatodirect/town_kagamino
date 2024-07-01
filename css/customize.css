@@ -866,6 +866,9 @@ a img:hover {
 /*** Single Page Hero Header End ***/
 
 /*** Service Start ***/
+#products .service-item.card {
+    border: none;
+}
 .service .service-item {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
@@ -964,55 +967,44 @@ a img:hover {
   color: var(--bs-secondary);
 }
 
-/* .status-wrapがある.service-itemのホバー動作を無効にする */
-.service .service-item .status-wrap:hover {
-  cursor: default;
+/* .status-wrapを.cardの上に重ねるCSS */
+.service .col-15 .status-wrap{
+  position: relative;
+  padding: 0;
 }
 
-.service .service-item .status-wrap~.service-img img,
-.service .service-item .status-wrap~.service-img::before,
-.service .service-item .status-wrap~.service-content::before {
-  transition: none;
-  transform: none;
-  background: none;
+.service .col-15 .status-wrap .card {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
 }
 
-.service .service-item:hover .status-wrap~.service-img::before {
-  height: 0;
-  background: none;
+.service .col-15 .status-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
-.service .service-item:hover .status-wrap~.service-img img {
-  transform: none;
+.service .col-15 .status-wrap p {
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
 }
 
-.service .service-item:hover .status-wrap~.service-content::before {
-  background: none;
-}
-
-.service .service-item:hover .status-wrap~.service-content .service-content-inner {
-  color: inherit !important;
-}
-
-/* 追加の安全策として */
-.service-item .status-wrap+.service-img::before {
-  height: auto !important;
-  background: none !important;
-}
-
-.service-item .status-wrap+.service-img:hover img {
-  transform: none !important;
-}
-
-.service-item .status-wrap:hover .service-content .service-content-inner {
-  position: static !important;
-  color: inherit !important;
-  z-index: auto !important;
-}
-
-.service-item .status-wrap+.service-content .service-content-inner {
-  color: inherit !important;
-}
 
 
 .service .nav {

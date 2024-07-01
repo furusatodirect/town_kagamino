@@ -12,6 +12,16 @@
     };
     spinner();
 
+    // Sticky Navbar
+    $(window).scroll(function () {
+      var $navbar = $(".navbar");
+      if ($(this).scrollTop() > 45) {
+        $navbar.addClass("sticky-top shadow-sm");
+      } else {
+        $navbar.removeClass("sticky-top shadow-sm");
+      }
+    });
+
     // Hero Header carousel
     $(".header-carousel").owlCarousel({
       items: 1,
@@ -26,16 +36,23 @@
       navText: ['<i class="bi bi-arrow-left"></i>', '<i class="bi bi-arrow-right"></i>'],
     });
 
-    // Sticky Navbar
-    $(window).scroll(function () {
-      var $navbar = $(".navbar");
-      if ($(this).scrollTop() > 45) {
-        $navbar.addClass("sticky-top shadow-sm");
-      } else {
-        $navbar.removeClass("sticky-top shadow-sm");
-      }
+    // Modal Video
+    var $videoSrc;
+    $(".btn-play").click(function () {
+      $videoSrc = $(this).data("src");
+      console.log($videoSrc);
+    });
 
-      // Back to top button visibility
+    $("#videoModal").on("shown.bs.modal", function (e) {
+      $("#video").attr("src", $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+    });
+
+    $("#videoModal").on("hide.bs.modal", function (e) {
+      $("#video").attr("src", "");
+    });
+
+    // Back to top button
+    $(window).scroll(function () {
       var $backToTop = $(".back-to-top");
       if ($(this).scrollTop() > 300) {
         $backToTop.fadeIn("slow");
@@ -47,7 +64,7 @@
     // ボタンをクリックした時の処理
     $(".back-to-top").click(function (e) {
       e.preventDefault(); // リンクのデフォルトの動作を無効化する
-      $("html, body").animate({ scrollTop: 0 }, 300);
+      $("html, body").animate({ scrollTop: 0 }, 1500, "easeInOutExpo");
     });
 
     // PageLink
@@ -80,7 +97,9 @@
       },
     });
 
-    // swiper product detail
+    /**
+     * swiper product detail
+     */
     const mySwiperPdThumb = new Swiper(".pd_thumb", {
       slidesPerView: document.querySelectorAll(".pd_thumb .swiper-slide").length > 5 ? 5.5 : 5,
       spaceBetween: 6,
