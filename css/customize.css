@@ -3128,10 +3128,10 @@ textarea {
 }
 
 .navi-2nd {
-  margin-top: .5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: .7rem;
 }
 
 .navi-2nd li {
@@ -3141,7 +3141,7 @@ textarea {
 }
 
 .navi-2nd li a {
-  font-size: calc(10px + 2 * ((100vw - 320px) / 670));
+  /*font-size: calc(10px + 2 * ((100vw - 320px) / 670));*/
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
