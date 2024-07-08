@@ -79,18 +79,26 @@
     <!-- Topbar End -->
 
     <!-- Navbar & Hero Start -->
-    <div class="container-fluid position-relative p-0">
+    <div class="container-fluid position-relative p-0 mx-auto">
       <nav class="navbar navbar-expand-lg navbar-light bg-white px-2 px-lg-5 py-2 py-lg-0">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
           <span class="fa fa-bars"></span>
         </button>
-        <a href="index.html" class="navbar-brand p-0">
+        <a href="index.html" class="navbar-brand p-0 mx-auto">
           <img src="img/logo.png" width="26px" height="26px" class="" alt="Image" />
-          <h4 class="m-0">鏡野町ふるさと納税特設サイト</h4>
+          <h4 class="stit m-0">鏡野町ふるさと納税特設サイト</h4>
           <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
+        <ul class="d-flex justify-content-center align-items-center d-block d-lg-none">
+          <li class="nav-item nav-link flex-fill p-0 me-1">
+            <a href="#" class=""><i class="fas fa-shopping-cart me-1"></i><span class="rounded-pill bg-primary text-white p-2 py-1 stit">2</span></a>
+          </li>
+          <li class="nav-item nav-link flex-fill p-0 align-items-center me-0">
+            <a href="#" class="d-flex justify-content-center align-items-center"><i class="fas fa-sign-in-alt me-1"></i><span class="stit">ログイン</span></a>
+          </li>
+        </ul>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <div class="navbar-nav ms-auto py-0">
+          <div class="navbar-nav ms-auto py-2">
             <a href="#gourmet" class="nav-item nav-link">グルメ・おみやげ・観光物産</a>
             <a href="#spots" class="nav-item nav-link">観光スポット</a>
             <a href="#event" class="nav-item nav-link">イベント</a>
@@ -98,11 +106,24 @@
             <a href="#use" class="nav-item nav-link">寄付の使い道</a>
             <!--<a href="#" class="nav-item nav-link">お問い合わせ</a>-->
           </div>
-          <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0 me-2">
+          <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0 me-2 d-none d-lg-block">
             カート
             <span class="rounded-pill bg-white text-primary px-2 py-1">2</span>
           </a>
-          <!--<a href="#" class="btn btn-primary rounded-pill text-white py-2 px-4 flex-wrap flex-sm-shrink-0">ログイン</a>-->
+          <ul class="d-flex justify-content-between w-100 d-block d-lg-none py-2 grid gap-1">
+            <li class="nav-item nav-link flex-fill p-0 d-none d-lg-block">
+              <a href="#" class="btn btn-primary rounded-pill text-white py-2 px-1 flex-wrap flex-sm-shrink-0 w-100 text-center">
+                カート
+                <span class="rounded-pill bg-white text-primary px-2 py-1">2</span>
+              </a>
+            </li>
+            <li class="nav-item nav-link flex-fill p-0">
+              <a href="#" class="btn btn-secondary rounded-pill text-white py-2 px-1 flex-wrap flex-sm-shrink-0 w-100 text-center">会員登録 / ログイン</a>
+            </li>
+            <li class="nav-item nav-link flex-fill p-0">
+              <a href="#" class="btn btn-gray rounded-pill text-white py-2 px-1 flex-wrap flex-sm-shrink-0 w-100 text-center">マイページ</a>
+            </li>
+          </ul>
         </div>
       </nav>
 
