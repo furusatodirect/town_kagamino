@@ -1521,6 +1521,7 @@ img.sitelogo {
   display: inline-block;
   transition: all 0.3s ease 0s;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .service .nav-item .nav-link:hover {
