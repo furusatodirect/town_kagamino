@@ -81,26 +81,45 @@
     });
 
     // swiper product detail
-    const mySwiperPdThumb = new Swiper(".pd_thumb", {
-      slidesPerView: document.querySelectorAll(".pd_thumb .swiper-slide").length > 5 ? 5.5 : 5,
-      spaceBetween: 6,
-      grabCursor: true,
-    });
+    const mainSlides = document.querySelectorAll(".pd_main .swiper-slide");
+    const thumbSlides = document.querySelectorAll(".pd_thumb .swiper-slide");
 
-    const mySwiperPdMain = new Swiper(".pd_main", {
-      effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
-      speed: 600,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-        swiper: mySwiperPdThumb,
-      },
-    });
+    if (mainSlides.length > 0 && thumbSlides.length > 0) {
+      const mainSwiper = new Swiper(".pd_main", {
+        loop: true,
+        loopedSlides: mainSlides.length,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        speed: 600,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
+      const thumbSlideCount = thumbSlides.length;
+      const thumbSwiper = new Swiper(".pd_thumb", {
+        slidesPerView: 5.5,
+        spaceBetween: 6,
+        // centeredSlides: true,
+        loop: true,
+        loopedSlides: thumbSlideCount,
+        slideToClickedSlide: true,
+        controller: {
+          control: mainSwiper,
+        },
+      });
+
+      mainSwiper.on("slideChangeTransitionEnd", () => {
+        const mainModulo = mainSwiper.activeIndex % mainSlides.length;
+        const thumbModulo = thumbSwiper.activeIndex % thumbSlides.length;
+        if (mainModulo !== thumbModulo) {
+          thumbSwiper.slideToLoop(mainModulo);
+        }
+      });
+    }
 
     // SNSリンク
     function toggleBalloon() {
