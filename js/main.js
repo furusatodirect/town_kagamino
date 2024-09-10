@@ -81,48 +81,91 @@
     });
 
     // swiper product detail
+    const wrap = document.querySelector(".pd_thumb"); // .pd_thumb 要素を取得
 
-    const mainSlides = document.querySelectorAll(".pd_main .swiper-slide");
-    const thumbSlides = document.querySelectorAll(".pd_thumb .swiper-slide");
+    const mySwiperPdThumb = new Swiper(".pd_thumb", {
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      slidesPerView: 5.5,
+      spaceBetween: 6,
+      slideToClickedSlide: true,
+    });
 
-    if (mainSlides.length > 0 && thumbSlides.length > 0) {
-      const mainSwiper = new Swiper(".pd_main", {
-        loop: true,
-        loopedSlides: mainSlides.length,
-        effect: "fade",
-        fadeEffect: {
-          crossFade: true,
-        },
-        speed: 600,
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
+    const mySwiperPdMain = new Swiper(".pd_main", {
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      effect: "fade",
+      fadeEffect: {
+        crossFade: true,
+      },
+      speed: 600,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      // アクティヴサムネイルに枠線
+      thumbs: {
+        swiper: mySwiperPdThumb,
+      },
+    });
 
-      const thumbSlideCount = thumbSlides.length;
-      const thumbSwiper = new Swiper(".pd_thumb", {
-        slidesPerView: 5.5,
-        spaceBetween: 6,
-        // centeredSlides: true,
-        loop: true,
-        loopedSlides: thumbSlideCount,
-        slideToClickedSlide: true,
-        controller: {
-          control: mainSwiper,
-        },
-      });
+    // 初期状態で左側のグラデーションを無効化
+    wrap.classList.remove("gradient");
 
-      mainSwiper.on("slideChangeTransitionEnd", () => {
-        const mainModulo = mainSwiper.activeIndex % mainSlides.length;
-        const thumbModulo = thumbSwiper.activeIndex % thumbSlides.length;
-        if (mainModulo !== thumbModulo) {
-          thumbSwiper.slideToLoop(mainModulo);
+    // メイン連動とのループ
+    mySwiperPdMain.on("slideChange", () => {
+      if (!mySwiperPdMain.isTouching) {
+        // タッチ中でない場合
+        mySwiperPdThumb.slideToLoop(mySwiperPdMain.realIndex);
+      }
+    });
+
+    // サムネイル連動
+    mySwiperPdThumb.on("slideChange", () => {
+      if (!mySwiperPdThumb.isTouching) {
+        // タッチ中でない場合
+        mySwiperPdMain.slideToLoop(mySwiperPdThumb.realIndex);
+
+        const isAtFirstSlide = mySwiperPdThumb.isBeginning;
+        const isAtLastSlide = mySwiperPdThumb.isEnd;
+
+        if (!isAtFirstSlide && !isAtLastSlide) {
+          // 両端にグラデーションを適用
+          wrap.classList.add("gradient");
+          wrap.classList.remove("no-right-gradient");
+        } else if (isAtFirstSlide) {
+          // 最初のスライドでは左側のグラデーションを無効化
+          wrap.classList.remove("gradient");
+        } else if (isAtLastSlide) {
+          // 最後のスライドでは右側のグラデーションを無効化
+          wrap.classList.add("no-right-gradient");
+          wrap.classList.remove("gradient");
         }
-      });
-    }
+      }
+    });
 
-    // swiper product detail
+    // サムネイルを手動でスライドしているとき、thumbsオプションを無効にする
+    mySwiperPdThumb.on("touchStart", () => {
+      mySwiperPdMain.thumbs.swiper = null; // 連動を無効にする
+      mySwiperPdMain.update(); // Swiperを更新して変更を反映
+    });
+
+    mySwiperPdThumb.on("touchEnd", () => {
+      mySwiperPdMain.thumbs.swiper = mySwiperPdThumb; // 連動を再度有効にする
+      mySwiperPdMain.update(); // Swiperを更新して変更を反映
+
+      // 両端でグラデーションを無効にする処理
+      const isAtFirstSlide = mySwiperPdThumb.isBeginning;
+      const isAtLastSlide = mySwiperPdThumb.isEnd;
+
+      if (isAtFirstSlide) {
+        wrap.classList.remove("gradient"); // 左端ではグラデーションを無効化
+      } else if (isAtLastSlide) {
+        wrap.classList.add("no-right-gradient"); // 右端では右のグラデーションを無効化
+      } else {
+        wrap.classList.add("gradient"); // 両端でない場合はグラデーションを適用
+      }
+    });
 
     // SNSリンク
     function toggleBalloon() {

@@ -186,6 +186,25 @@
                 </div>
               </div>
             </div>
+            <style>
+              /* 初期状態は左側のグラデーションを無効化 */
+              .pd_thumb {
+                mask-image: linear-gradient(to right, black 0%, black 90%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to right, black 0%, black 90%, transparent 100%);
+              }
+
+              /* 両端にグラデーションを適用するクラス */
+              .pd_thumb.gradient {
+                mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+              }
+
+              /* 右側のグラデーションを無効化 */
+              .pd_thumb.no-right-gradient {
+                mask-image: linear-gradient(to right, transparent 0%, black 10%, black 100%);
+                -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 100%);
+              }
+            </style>
 
             <div class="col-md-6 col-xl-5 area-pro">
               <div class="area-pro-txt">
