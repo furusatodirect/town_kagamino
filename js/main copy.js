@@ -82,32 +82,21 @@
 
     // swiper product detail
     const wrap = document.querySelector(".pd_thumb"); // .pd_thumb 要素を取得
+
     const totalSlides = document.querySelectorAll(".pd_thumb .swiper-slide").length;
-    //swiper サムネイル
+    const slidesPerView = totalSlides > 5 ? 5.3 : 5;
+
     const mySwiperPdThumb = new Swiper(".pd_thumb", {
       centeredSlides: true,
       centeredSlidesBounds: true,
-      slidesPerView: 3.5,
-      breakpoints: {
-        768: {
-          slidesPerView: totalSlides > 5 ? 5.5 : 5,
-        },
-      },
+      slidesPerView: slidesPerView,
       spaceBetween: 6,
       slideToClickedSlide: true,
-      freeMode: {
-        enabled: true,
-        momentumRatio: 0.3,
-        momentumVelocityRatio: 0.35,
-      },
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        hide: true,
-        draggable: true,
-      },
     });
-    //swiper メイン
+
     const mySwiperPdMain = new Swiper(".pd_main", {
+      centeredSlides: true,
+      centeredSlidesBounds: true,
       effect: "fade",
       fadeEffect: {
         crossFade: true,
@@ -117,46 +106,67 @@
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      // アクティヴサムネイルに枠線
       thumbs: {
         swiper: mySwiperPdThumb,
       },
     });
-    // メインと連動ループ
+
+    // 初期状態で左側のグラデーションを無効化
+    wrap.classList.remove("gradient");
+
+    // メイン連動とのループ
     mySwiperPdMain.on("slideChange", () => {
       if (!mySwiperPdMain.isTouching) {
+        // タッチ中でない場合
         mySwiperPdThumb.slideToLoop(mySwiperPdMain.realIndex);
       }
     });
-    // グラデーションクラス
-    function updateGradientClass() {
-      const totalSlides = document.querySelectorAll(".pd_thumb .swiper-slide").length;
-      const isMobile = window.matchMedia("(max-width: 767px)").matches;
-      wrap.classList.remove("nogradient", "right-gradient");
-      // クラスの適用
-      if (isMobile && totalSlides <= 5) {
-        wrap.classList.add("right-gradient"); // モバイルで5枚以下の場合、右端グラデを適用
-      } else if (totalSlides <= 5) {
-        wrap.classList.add("nogradient"); // 5枚以下はグラデなし
-      } else {
-        wrap.classList.add("right-gradient"); // 6枚以上は右端グラデ
-      }
-    }
-    updateGradientClass();
 
-    // スライド中グラデーションクラス
+    // サムネイル連動
     mySwiperPdThumb.on("slideChange", () => {
-      updateGradientClass();
       if (!mySwiperPdThumb.isTouching) {
+        // タッチ中でない場合
+        mySwiperPdMain.slideToLoop(mySwiperPdThumb.realIndex);
+
         const isAtFirstSlide = mySwiperPdThumb.isBeginning;
         const isAtLastSlide = mySwiperPdThumb.isEnd;
-        wrap.classList.remove("gradient", "left-gradient", "right-gradient"); // すべてのグラデ一旦削除
+
         if (!isAtFirstSlide && !isAtLastSlide) {
-          wrap.classList.add("gradient"); // 両端にグラデ適用
+          // 両端にグラデーションを適用
+          wrap.classList.add("gradient");
+          wrap.classList.remove("no-right-gradient");
         } else if (isAtFirstSlide) {
-          wrap.classList.add("right-gradient"); // スライド最初の位置では右側グラデ
+          // 最初のスライドでは左側のグラデーションを無効化
+          wrap.classList.remove("gradient");
         } else if (isAtLastSlide) {
-          wrap.classList.add("left-gradient"); // スライド最後の位置では左側グラデ
+          // 最後のスライドでは右側のグラデーションを無効化
+          wrap.classList.add("no-right-gradient");
+          wrap.classList.remove("gradient");
         }
+      }
+    });
+
+    // サムネイルを手動でスライドしているとき、thumbsオプションを無効にする
+    mySwiperPdThumb.on("touchStart", () => {
+      mySwiperPdMain.thumbs.swiper = null; // 連動を無効にする
+      mySwiperPdMain.update(); // Swiperを更新して変更を反映
+    });
+
+    mySwiperPdThumb.on("touchEnd", () => {
+      mySwiperPdMain.thumbs.swiper = mySwiperPdThumb; // 連動を再度有効にする
+      mySwiperPdMain.update(); // Swiperを更新して変更を反映
+
+      // 両端でグラデーションを無効にする処理
+      const isAtFirstSlide = mySwiperPdThumb.isBeginning;
+      const isAtLastSlide = mySwiperPdThumb.isEnd;
+
+      if (isAtFirstSlide) {
+        wrap.classList.remove("gradient"); // 左端ではグラデーションを無効化
+      } else if (isAtLastSlide) {
+        wrap.classList.add("no-right-gradient"); // 右端では右のグラデーションを無効化
+      } else {
+        wrap.classList.add("gradient"); // 両端でない場合はグラデーションを適用
       }
     });
 

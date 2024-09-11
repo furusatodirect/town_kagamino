@@ -157,52 +157,64 @@
                   </div>
                 </div>
               </div>
-              <div class="swiper pd_thumb pic-t">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-01.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-02.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-03.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-04.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-05.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-06.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-07.jpg" class="img-fluid w-100" alt="Image" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="img/kagami-product-08.jpg" class="img-fluid w-100" alt="Image" />
+              <div class="sw-bar-wrap">
+                <div class="swiper pd_thumb pic-t">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-01.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-02.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-03.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-04.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-05.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-06.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-07.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="img/kagami-product-08.jpg" class="img-fluid w-100" alt="Image" />
+                    </div>
                   </div>
                 </div>
+                <div class="swiper-scrollbar d-block d-md-none"></div>
               </div>
             </div>
             <style>
-              /* 初期状態は左側のグラデーションを無効化 */
-              .pd_thumb {
-                mask-image: linear-gradient(to right, black 0%, black 90%, transparent 100%);
-                -webkit-mask-image: linear-gradient(to right, black 0%, black 90%, transparent 100%);
+              .sw-bar-wrap {
+                position: relative;
               }
-
-              /* 両端にグラデーションを適用するクラス */
+              .swiper-scrollbar {
+                bottom: -4px !important;
+                background-color: #ccc;
+              }
+              .swiper-scrollbar-drag {
+                background-color: #0095e1;
+              }
+              .pd_thumb.nogradient {
+                mask-image: none;
+                -webkit-mask-image: none;
+              }
               .pd_thumb.gradient {
                 mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
                 -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
               }
-
-              /* 右側のグラデーションを無効化 */
-              .pd_thumb.no-right-gradient {
+              .pd_thumb.left-gradient {
                 mask-image: linear-gradient(to right, transparent 0%, black 10%, black 100%);
                 -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 100%);
+              }
+              .pd_thumb.right-gradient {
+                mask-image: linear-gradient(to right, black 0%, black 90%, transparent 100%);
+                -webkit-mask-image: linear-gradient(to right, black 0%, black 90%, transparent 100%);
               }
             </style>
 
