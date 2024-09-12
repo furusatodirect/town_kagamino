@@ -194,6 +194,42 @@
       $("#js-popup").hide();
     });
   });
+  //イベントタブ切り替え
+  // 季節
+  function getSeason() {
+    const month = new Date().getMonth() + 1; // 月を取得 (1月が0)
+    if (month >= 3 && month <= 5) return "春";
+    if (month >= 6 && month <= 8) return "夏";
+    if (month >= 9 && month <= 11) return "秋";
+    return "冬"; // 12月～2月は冬
+  }
+
+  function updateTabClasses() {
+    const season = getSeason();
+
+    // タブと内容のクラスリセット
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.classList.remove("active");
+      link.setAttribute("aria-selected", "false");
+    });
+
+    document.querySelectorAll(".tab-pane").forEach((pane) => {
+      pane.classList.remove("show", "active");
+    });
+
+    // タブと内容にクラスを追加
+    const activeLink = Array.from(document.querySelectorAll(".nav-link")).find((link) => link.textContent === season);
+    const activePane = document.querySelector(activeLink.getAttribute("data-bs-target"));
+
+    if (activeLink && activePane) {
+      activeLink.classList.add("active");
+      activeLink.setAttribute("aria-selected", "true");
+      activePane.classList.add("show", "active");
+    }
+  }
+
+  // ページ読み込み時にタブと内容を更新
+  document.addEventListener("DOMContentLoaded", updateTabClasses);
 })(jQuery);
 
 (function ($) {
