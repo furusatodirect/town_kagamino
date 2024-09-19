@@ -44,9 +44,9 @@
       }
     });
 
-    // ボタンをクリックした時の処理
+    // topへ戻るスクロール
     $(".back-to-top").click(function (e) {
-      e.preventDefault(); // リンクのデフォルトの動作を無効化する
+      e.preventDefault();
       $("html, body").animate({ scrollTop: 0 }, 300);
     });
 
@@ -62,9 +62,34 @@
         return false;
       }
     });
+    // VARIABLES
+    const elH = document.querySelectorAll(".timeline li > div");
+
+    // START
+    window.addEventListener("load", init);
+
+    function init() {
+      setEqualHeights(elH);
+    }
+
+    // SET EQUAL HEIGHTS
+    function setEqualHeights(el) {
+      let counter = 0;
+      for (let i = 0; i < el.length; i++) {
+        const singleHeight = el[i].offsetHeight;
+
+        if (counter < singleHeight) {
+          counter = singleHeight;
+        }
+      }
+
+      for (let i = 0; i < el.length; i++) {
+        el[i].style.height = `${counter}px`;
+      }
+    }
 
     // Swiper .swiper-step
-    new Swiper(".swiper-step", {
+    const swiper1 = new Swiper(".swiper-step", {
       freeMode: true,
       scrollbar: {
         el: ".swiper-scrollbar",
@@ -230,6 +255,28 @@
 
   // ページ読み込み時にタブと内容を更新
   document.addEventListener("DOMContentLoaded", updateTabClasses);
+
+  //グルメ・おみやげ・観光物産フィルター
+  document.addEventListener("DOMContentLoaded", function () {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const serviceItems = document.querySelectorAll(".service-item");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", function () {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+        const filter = button.getAttribute("data-filter");
+        serviceItems.forEach((item) => {
+          const category = item.getAttribute("data-category");
+          if (category === filter || filter === "all") {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      });
+    });
+  });
 })(jQuery);
 
 (function ($) {
