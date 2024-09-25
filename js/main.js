@@ -51,45 +51,30 @@
     });
 
     // PageLink
-    $('a[href^="#"]').click(function () {
+    $('a[href^="#"]').click(function (e) {
+      e.preventDefault();
       var adjust = $(".navbar").outerHeight();
       var speed = 400;
       var href = $(this).attr("href");
       var target = $(href === "#" || href === "" ? "html" : href);
       if (target.length) {
         var position = target.offset().top - adjust;
-        $("body,html").animate({ scrollTop: position }, speed, "swing");
+        $("html, body").animate(
+          { scrollTop: position },
+          {
+            duration: speed,
+            easing: "swing",
+            complete: function () {
+              window.location.hash = href;
+            },
+          }
+        );
         return false;
       }
     });
-    // VARIABLES
-    const elH = document.querySelectorAll(".timeline li > div");
-
-    // START
-    window.addEventListener("load", init);
-
-    function init() {
-      setEqualHeights(elH);
-    }
-
-    // SET EQUAL HEIGHTS
-    function setEqualHeights(el) {
-      let counter = 0;
-      for (let i = 0; i < el.length; i++) {
-        const singleHeight = el[i].offsetHeight;
-
-        if (counter < singleHeight) {
-          counter = singleHeight;
-        }
-      }
-
-      for (let i = 0; i < el.length; i++) {
-        el[i].style.height = `${counter}px`;
-      }
-    }
 
     // Swiper .swiper-step
-    const swiper1 = new Swiper(".swiper-step", {
+    new Swiper(".swiper-step", {
       freeMode: true,
       scrollbar: {
         el: ".swiper-scrollbar",
@@ -156,14 +141,20 @@
     function updateGradientClass() {
       const totalSlides = document.querySelectorAll(".pd_thumb .swiper-slide").length;
       const isMobile = window.matchMedia("(max-width: 767px)").matches;
-      wrap.classList.remove("nogradient", "right-gradient");
-      // クラスの適用
-      if (isMobile && totalSlides <= 5) {
-        wrap.classList.add("right-gradient"); // モバイルで5枚以下の場合、右端グラデを適用
-      } else if (totalSlides <= 5) {
-        wrap.classList.add("nogradient"); // 5枚以下はグラデなし
-      } else {
-        wrap.classList.add("right-gradient"); // 6枚以上は右端グラデ
+      const wrap = document.querySelector(".sw-bar-wrap");
+
+      if (wrap) {
+        // wrapがnullでない場合のみ処理を行う
+        wrap.classList.remove("nogradient", "right-gradient");
+
+        // クラスの適用
+        if (isMobile && totalSlides <= 5) {
+          wrap.classList.add("right-gradient"); // モバイルで5枚以下の場合、右端グラデを適用
+        } else if (totalSlides <= 5) {
+          wrap.classList.add("nogradient"); // 5枚以下はグラデなし
+        } else {
+          wrap.classList.add("right-gradient"); // 6枚以上は右端グラデ
+        }
       }
     }
     updateGradientClass();
@@ -185,23 +176,16 @@
       }
     });
 
-    // SNSリンク
-    function toggleBalloon() {
-      $("#share-list").toggleClass("balloon balloon1");
-    }
-
-    $("#share-list a").click(function () {
-      toggleBalloon();
-    });
-
     // アコーディオン
-    $(".ac-open").hide();
-    $(".ac-btn").on("click", function () {
-      var $openSection = $(this).prev(".ac-open");
-      $openSection.slideToggle("slow", "swing");
+    $("#top .ac-open").hide();
+    $("#top .ac-btn").on("click", function () {
+      $(this).prev("#top .ac-open").slideToggle("slow", "swing");
       $(this).toggleClass("active");
-      var buttonText = $(this).text().trim();
-      $(this).text(buttonText === "もっと見る" ? "閉じる" : "もっと見る");
+      if ($(this).text() === "もっと見る") {
+        $(this).text("閉じる");
+      } else {
+        $(this).text("もっと見る");
+      }
     });
 
     // Cart addition
@@ -211,14 +195,15 @@
     });
 
     // ポップアップ
-    $("#popupbtns, #popupbtnf").click(function () {
+    $("#popupbtns, #popupbtnf").click(function (e) {
       $("#js-popup").show();
     });
 
-    $("#popup-close, #popup-bg").click(function () {
+    $("#popup-close, #popup-bg").click(function (e) {
       $("#js-popup").hide();
     });
   });
+
   //イベントタブ切り替え
   // 季節
   function getSeason() {
@@ -244,15 +229,16 @@
 
     // タブと内容にクラスを追加
     const activeLink = Array.from(document.querySelectorAll(".nav-link")).find((link) => link.textContent === season);
-    const activePane = document.querySelector(activeLink.getAttribute("data-bs-target"));
+    if (activeLink) {
+      const activePane = document.querySelector(activeLink.getAttribute("data-bs-target"));
 
-    if (activeLink && activePane) {
-      activeLink.classList.add("active");
-      activeLink.setAttribute("aria-selected", "true");
-      activePane.classList.add("show", "active");
+      if (activeLink && activePane) {
+        activeLink.classList.add("active");
+        activeLink.setAttribute("aria-selected", "true");
+        activePane.classList.add("show", "active");
+      }
     }
   }
-
   // ページ読み込み時にタブと内容を更新
   document.addEventListener("DOMContentLoaded", updateTabClasses);
 
