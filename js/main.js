@@ -51,26 +51,23 @@
     });
 
     // PageLink
-    $('a[href^="#"]').click(function (e) {
-      e.preventDefault();
-      var adjust = $(".navbar").outerHeight();
-      var speed = 400;
-      var href = $(this).attr("href");
-      var target = $(href === "#" || href === "" ? "html" : href);
-      if (target.length) {
-        var position = target.offset().top - adjust;
-        $("html, body").animate(
-          { scrollTop: position },
-          {
-            duration: speed,
-            easing: "swing",
-            complete: function () {
-              window.location.hash = href;
-            },
+    $(function () {
+      var isFirstClick = true;
+      $('a[href^="#"]').click(function () {
+        var adjust = $(".navbar").outerHeight();
+        var speed = 400;
+        var href = $(this).attr("href");
+        var target = $(href === "#" || href === "" ? "html" : href);
+        if (target.length) {
+          var position = target.offset().top - adjust;
+          if (isFirstClick) {
+            position -= 10;
+            isFirstClick = false;
           }
-        );
-        return false;
-      }
+          $("body,html").animate({ scrollTop: position }, speed, "swing");
+          return false;
+        }
+      });
     });
 
     // Swiper .swiper-step
