@@ -47,21 +47,27 @@
     // topへ戻るスクロール
     $(".back-to-top").click(function (e) {
       e.preventDefault();
-      $("html, body").animate({ scrollTop: 0 }, 300);
+      $("html, body").animate({ scrollTop: 0 }, 100);
     });
 
     // PageLink
     $(function () {
       var isFirstClick = true;
-      $('a[href^="#"]').click(function () {
+      $('a[href^="#"], a[href^="/#"]').click(function () {
         var adjust = $(".navbar").outerHeight();
-        var speed = 400;
+        var speed = 100;
         var href = $(this).attr("href");
+
+        // hrefが「/#」で始まる場合は「#」から始まる部分だけを取り出す
+        if (href.startsWith("/#")) {
+          href = href.substring(1); // 最初のスラッシュを除去
+        }
+
         var target = $(href === "#" || href === "" ? "html" : href);
         if (target.length) {
           var position = target.offset().top - adjust;
           if (isFirstClick) {
-            position -= 10;
+            position -= 90;
             isFirstClick = false;
           }
           $("body,html").animate({ scrollTop: position }, speed, "swing");

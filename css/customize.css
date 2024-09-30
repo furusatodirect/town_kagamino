@@ -202,7 +202,7 @@ h6,
   line-height: 1.5;
 }
 
-/* Smooth scroll behavior*/
+/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
@@ -219,7 +219,7 @@ main {
 
 .container {
   max-width: 1920px;
-  margin: auto;
+  margin: 0 auto;
   width: 96%;
 }
 
@@ -1274,7 +1274,6 @@ img.sitelogo {
   .carousel-caption-content h1 {
     font-size: 1.2rem !important;
   }
-
 }
 
 @media (min-width: 992px) {
